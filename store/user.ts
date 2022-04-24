@@ -39,7 +39,7 @@ export const useUserStore = defineStore('user', {
       // )
       // this.test = git
       const { data } = await apiClient.get(
-        'repos/ryo13chan/mobile-portfolio/commits/master'
+        'repos/ryo13chan/web-portfolio/commits/master'
       )
       this.test = data
     },

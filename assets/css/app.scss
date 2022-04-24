@@ -1,0 +1,10 @@
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background: var(--surface-ground);
+}
