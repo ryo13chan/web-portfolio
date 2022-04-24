@@ -1,5 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <AppHeader></AppHeader>
+  <AppHeader />
   <slot></slot>
+  <ScrollTop />
 </template>
