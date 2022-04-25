@@ -41,8 +41,7 @@ const show = () => (visibleMenu.value = true)
           size="xlarge"
           shape="circle"
         />
-        <!-- TODO: git更新履歴 -->
-        <div>aaaaaaaa</div>
+        <GitLastCommit />
       </div>
       <nav class="flex align-items-center">
         <!-- PC用メニュー -->

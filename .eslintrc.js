@@ -14,5 +14,6 @@ module.exports = {
   rules: {
     'no-undef': 'off',
     'vue/multi-word-component-names': 'off',
+    camelcase: 'off',
   },
 }
