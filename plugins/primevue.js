@@ -4,6 +4,7 @@ import Button from 'primevue/button'
 import Sidebar from 'primevue/sidebar'
 import Avatar from 'primevue/avatar'
 import ScrollTop from 'primevue/scrolltop'
+import Tag from 'primevue/tag'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(PrimeVue)
@@ -14,4 +15,5 @@ export default defineNuxtPlugin((nuxtApp) => {
   // MISC
   nuxtApp.vueApp.component('Avatar', Avatar)
   nuxtApp.vueApp.component('ScrollTop', ScrollTop)
+  nuxtApp.vueApp.component('Tag', Tag)
 })
