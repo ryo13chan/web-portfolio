@@ -1,65 +1,32 @@
-<script setup lang="ts">
-import { useUserStore } from '~/store/user'
-import CCCccc from '~/components/test/CCCccc.vue'
-import InputText from 'primevue/inputtext'
-import { storeToRefs } from 'pinia'
-
-const a = ref<string>('aaaaaaaaa')
-// const b = { a: 'a', b: 'aaa' }
-
-const userStore = useUserStore()
-const { users, getUserCount, getTest } = storeToRefs(userStore)
-
-// const fn = (args) => {
-//   console.log(args)
-// }
-// function greeting(name) {
-//   return `Hello ${name}!`
-// }
-
-const isLoading = ref<boolean>(false)
-
-onBeforeMount(async () => {
-  isLoading.value = true
-  await userStore.getUsers()
-  isLoading.value = false
-})
-</script>
-
 <template>
-  <div v-if="!isLoading" class="aaa">
-    <!-- <NuxtWelcome /> -->
-    <span class="ccc">
-      {{ a }}
-    </span>
-    <span class="">
-      {{ a }}
-    </span>
-    <div v-for="user in users" :key="user.id">
-      {{ user.name }}
+  <div class="home">
+    <div class="md:mr-5">
+      <h1>Welcome to Ryo's Portfolio!</h1>
+      <div>
+        <p>はじめまして。</p>
+        <p>
+          Webエンジニアの<span class="font-bold text-xl">Ryo</span>と申します。
+        </p>
+        <p>当サイトはWebエンジニアとしてのポートフォリオです。</p>
+        <p>是非ご覧下さい！</p>
+      </div>
     </div>
-    <div>
-      {{ getUserCount }}
-    </div>
-    <div>
-      {{ getTest }}
-    </div>
-    <!-- <input @keydown.enter="submit" /> -->
+    <Avatar
+      image="assets/images/icon.jpg"
+      class="mr-3 w-15rem h-15rem md:w-15rem md:h-15rem"
+      shape="circle"
+    />
   </div>
-  <Button label="aaa" type="submit" />
-  <InputText />
-  <BBBbbb />
-  <TestCCCccc />
-  <CCCccc />
-  <template />
 </template>
 
 <style scoped lang="scss">
-.aaa {
-  font-weight: bold;
+@import 'primeflex/primeflex.scss';
 
-  .ccc {
-    background-color: chartreuse;
-  }
+.home {
+  @include styleclass(
+    'flex align-items-center justify-content-center flex-column md:flex-row'
+  );
+
+  height: calc(100vh - 170px);
 }
 </style>
