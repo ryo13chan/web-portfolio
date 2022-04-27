@@ -1,3 +1,4 @@
+/* stylelint-disable selector-id-pattern */
 a {
   color: $primary-color;
   text-decoration: none;
@@ -7,4 +8,10 @@ body {
   font-family: var(--font-family);
   color: var(--text-color);
   background: var(--surface-ground);
+
+  #__nuxt {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+  }
 }
