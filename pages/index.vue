@@ -27,6 +27,6 @@
     'flex align-items-center justify-content-center flex-column md:flex-row'
   );
 
-  height: calc(100vh - 170px);
+  height: calc(100vh - 200px);
 }
 </style>
