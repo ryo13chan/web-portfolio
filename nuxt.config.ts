@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     'primeflex/primeflex.css',
     'primeicons/primeicons.css',
     '@/assets/css/app.scss',
+    '~/node_modules/highlight.js/styles/vs2015.css',
   ],
   ssr: false,
   typescript: {

@@ -1,6 +1,7 @@
 import { defineNuxtPlugin } from '#app'
 import PrimeVue from 'primevue/config'
 import Button from 'primevue/button'
+import Card from 'primevue/card'
 import Panel from 'primevue/panel'
 import Sidebar from 'primevue/sidebar'
 import Avatar from 'primevue/avatar'
@@ -13,6 +14,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   // BUTTON
   nuxtApp.vueApp.component('Button', Button)
   // PANEL
+  nuxtApp.vueApp.component('Card', Card)
   nuxtApp.vueApp.component('Panel', Panel)
   // OVERLAY
   nuxtApp.vueApp.component('Sidebar', Sidebar)

@@ -12,22 +12,12 @@ withDefaults(defineProps<Props>(), {
   title: '',
   skills: () => [],
 })
-
-const iconUrl = (skill: Skill): string => {
-  if (skill.iconUrl) return skill.iconUrl
-  return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.key}/${skill.key}-original.svg`
-}
 </script>
 
 <template>
   <Panel :header="title">
     <div class="panel-body">
-      <Chip v-for="skill in skills" :key="skill.key">
-        <div class="p-1 flex align-items-center">
-          <img :src="iconUrl(skill)" />
-          <span>{{ skill.label }}</span>
-        </div>
-      </Chip>
+      <SkillChip v-for="skill in skills" :key="skill.key" :skill="skill" />
     </div>
   </Panel>
 </template>
