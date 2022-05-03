@@ -72,21 +72,25 @@ const show = () => (visibleMenu.value = true)
 <style scoped lang="scss">
 @import 'primeflex/primeflex.scss';
 
-.menu-item {
-  @include styleclass('px-3 cursor-pointer');
+header {
+  z-index: 1000;
 
-  a {
-    color: var(--text-color);
+  .menu-item {
+    @include styleclass('px-3 cursor-pointer');
 
-    &:hover {
-      color: $primary-color;
-      transition: color 0.5s;
-    }
+    a {
+      color: var(--text-color);
 
-    &.router-link-active {
-      padding-bottom: 5px;
-      color: $primary-color;
-      border-bottom: 1px solid;
+      &:hover {
+        color: $primary-color;
+        transition: color 0.5s;
+      }
+
+      &.router-link-active {
+        padding-bottom: 5px;
+        color: $primary-color;
+        border-bottom: 1px solid;
+      }
     }
   }
 }
