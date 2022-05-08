@@ -31,9 +31,9 @@ const events = ref<event[]>([
     descriptions: ['自分らしい生き方を模索し、個人事業主に'],
   },
   {
-    title: '北海道へUターン',
+    title: '移住',
     date: '2021年',
-    descriptions: ['札幌でリモートワーク中心に活動中'],
+    descriptions: ['札幌からリモートワークで活動中'],
   },
 ])
 </script>
@@ -48,7 +48,7 @@ const events = ref<event[]>([
         <template #content="{ item }">
           <Card class="mb-4 border-solid border-200">
             <template #subtitle>
-              {{ item.title }}
+              <span class="font-bold">{{ item.title }}</span>
             </template>
             <template #content>
               <div

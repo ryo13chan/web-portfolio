@@ -2,6 +2,8 @@ import { defineNuxtPlugin } from '#app'
 import PrimeVue from 'primevue/config'
 import Button from 'primevue/button'
 import Timeline from 'primevue/timeline'
+import Accordion from 'primevue/accordion'
+import AccordionTab from 'primevue/accordiontab'
 import Card from 'primevue/card'
 import Panel from 'primevue/panel'
 import Sidebar from 'primevue/sidebar'
@@ -17,6 +19,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   // DATA
   nuxtApp.vueApp.component('Timeline', Timeline)
   // PANEL
+  nuxtApp.vueApp.component('Accordion', Accordion)
+  nuxtApp.vueApp.component('AccordionTab', AccordionTab)
   nuxtApp.vueApp.component('Card', Card)
   nuxtApp.vueApp.component('Panel', Panel)
   // OVERLAY

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import SelfIntroduction from '../components/about/SelfIntroduction.vue'
 import Timeline from '../components/about/Timeline.vue'
+import Career from '~~/components/about/Career.vue'
 </script>
 
 <template>
@@ -13,7 +14,10 @@ import Timeline from '../components/about/Timeline.vue'
       <div class="col-12 xl:col-6">
         <Timeline />
       </div>
-      <!-- TODO: 経歴を一覧表示 -->
+      <div class="col-12">
+        <!-- TODO: 経歴を一覧表示 -->
+        <Career />
+      </div>
     </div>
   </div>
 </template>
