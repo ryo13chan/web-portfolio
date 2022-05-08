@@ -13,7 +13,9 @@ defineProps<Props>()
 <template>
   <Card>
     <template #header>
-      <img :src="image" class="p-2" />
+      <NuxtLink :href="titleLink" target="_blank">
+        <img :src="image" class="p-2" />
+      </NuxtLink>
     </template>
     <template #title>
       <NuxtLink :href="titleLink" target="_blank" class="title">{{
