@@ -29,6 +29,20 @@ const mobilePortfolioSkills = ref<Skill[]>([
     label: 'Flutter',
   },
 ])
+
+const tsumitateSimulationImageUrl = computed(
+  () => new URL('../assets/images/mobile-portfolio.png', import.meta.url).href
+)
+const tsumitateSimulationSkills = ref<Skill[]>([
+  {
+    key: 'typescript',
+    label: 'TypeScript',
+  },
+  {
+    key: 'nuxtjs',
+    label: 'Nuxt.js',
+  },
+])
 </script>
 
 <template>
@@ -39,7 +53,7 @@ const mobilePortfolioSkills = ref<Skill[]>([
         <WorkCard
           :image="webPortfolioImageUrl"
           title="Web Portfolio"
-          title-link="https://ryo13chan.github.io/web-portfolio/"
+          href="https://ryo13chan.github.io/web-portfolio/"
           :skills="webPortfolioSkills"
           description="当サイトです。"
         />
@@ -48,9 +62,18 @@ const mobilePortfolioSkills = ref<Skill[]>([
         <WorkCard
           :image="mobilePortfolioImageUrl"
           title="Mobile Portfolio"
-          title-link="https://ryo13chan.github.io/mobile-portfolio/"
+          href="https://ryo13chan.github.io/mobile-portfolio/"
           :skills="mobilePortfolioSkills"
           description="モバイルエンジニアとしてのポートフォリオサイトです。"
+        />
+      </div>
+      <div class="col-12 lg:col-6">
+        <WorkCard
+          :image="tsumitateSimulationImageUrl"
+          title="積立シミュレーション"
+          to="/reserve-simulation/"
+          :skills="tsumitateSimulationSkills"
+          description="積立シミュレーション"
         />
       </div>
     </div>

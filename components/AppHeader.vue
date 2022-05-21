@@ -36,7 +36,7 @@ const show = () => (visibleMenu.value = true)
     <div class="flex justify-content-between align-items-center">
       <div class="flex align-items-center">
         <Avatar
-          image="assets/images/icon.jpg"
+          image="../assets/images/icon.jpg"
           class="mr-3"
           size="xlarge"
           shape="circle"

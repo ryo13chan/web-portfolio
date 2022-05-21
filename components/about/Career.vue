@@ -34,13 +34,31 @@ const projectDuration = (project: Project) => {
   if (!project.endDate) return `${project.startDate} -`
   return `${project.startDate} - ${project.endDate}`
 }
+
+const activeIndexes = ref<number[]>([])
+const open = () => {
+  activeIndexes.value = projects.value.map((_, i) => i)
+}
+const close = () => {
+  activeIndexes.value = []
+}
 </script>
 
 <template>
   <Card>
     <template #content>
-      <h3 class="mt-0">経歴</h3>
-      <Accordion :multiple="true" :active-index="projects.map((_, i) => i)">
+      <div class="flex align-items-center justify-content-between mb-3">
+        <h3 class="my-0">経歴</h3>
+        <div>
+          <Button label="開く" class="p-button-text" @click="open" />
+          <Button
+            label="閉じる"
+            class="p-button-secondary p-button-text"
+            @click="close"
+          />
+        </div>
+      </div>
+      <Accordion :multiple="true" :active-index="activeIndexes">
         <AccordionTab v-for="(project, pi) in projects" :key="pi" class="mb-4">
           <template #header>
             <div class="flex flex-column">
@@ -63,5 +81,3 @@ const projectDuration = (project: Project) => {
     </template>
   </Card>
 </template>
-
-<style scoped lang="scss"></style>

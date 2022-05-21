@@ -3,7 +3,8 @@ import { Skill } from '~/components/skills/SkillPanel.vue'
 type Props = {
   image: string
   title: string
-  titleLink: string
+  href?: string
+  to?: string
   skills: Skill[]
   description: string
 }
@@ -13,12 +14,12 @@ defineProps<Props>()
 <template>
   <Card>
     <template #header>
-      <NuxtLink :href="titleLink" target="_blank">
+      <NuxtLink :href="href" :to="to" target="_blank">
         <img :src="image" class="p-2" />
       </NuxtLink>
     </template>
     <template #title>
-      <NuxtLink :href="titleLink" target="_blank" class="title">{{
+      <NuxtLink :href="href" :to="to" target="_blank" class="title">{{
         title
       }}</NuxtLink>
     </template>

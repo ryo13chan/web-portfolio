@@ -2,13 +2,12 @@
 type event = {
   title: string
   date: string
-  descriptions: string[]
+  descriptions?: string[]
 }
 const events = ref<event[]>([
   {
     title: '誕生',
     date: '1992年',
-    descriptions: [],
   },
   {
     title: '大学',
@@ -23,7 +22,7 @@ const events = ref<event[]>([
   {
     title: '転職',
     date: '2017年',
-    descriptions: ['元々興味があったWeb開発へ'],
+    descriptions: ['元々興味があったWeb業界へ'],
   },
   {
     title: '独立',
