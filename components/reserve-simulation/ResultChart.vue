@@ -34,7 +34,9 @@ const options = ref({
               ? tooltipItems[0].dataIndex === 0
                 ? 0
                 : tooltipItems[0].dataset.data[tooltipItems[0].dataIndex] -
-                  tooltipItems[0].dataset.data[tooltipItems[0].dataIndex - 1]
+                  tooltipItems[0].dataset.data[
+                    tooltipItems[0].dataIndex - 1
+                  ].toLocaleString()
               : tooltipItems
                   .reduce(
                     (a: any, b: any) =>

@@ -11,7 +11,7 @@
         <ReserveSimulationAccumulationPeriod />
       </TabPanel>
       <TabPanel header="毎月積立金額">
-        <ReserveSimulationMontylyReserveAmount />
+        <ReserveSimulationMonthlyReserveAmount />
       </TabPanel>
     </TabView>
   </div>

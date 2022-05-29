@@ -44,7 +44,7 @@ const calculate = () => {
       <div class="mb-4">毎月積立金額</div>
       <div>
         <span class="font-bold text-4xl">{{ monthlyReserveAmountLabel }}</span>
-        年
+        円
       </div>
     </div>
   </div>
