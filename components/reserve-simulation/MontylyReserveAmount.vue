@@ -1,22 +1,22 @@
 <script setup lang="ts">
-const monthlyReserveAmount = ref<number>(1)
+const targetAmount = ref<number>(100)
 const accumulationPeriod = ref<number>(1)
 const annualYield = ref<number>(1)
 
-const finalReserveAmount = ref<number>(0)
-const finalReserveAmountLabel = computed(() =>
-  finalReserveAmount.value.toLocaleString()
+const monthlyReserveAmount = ref<number>(0)
+const monthlyReserveAmountLabel = computed(() =>
+  monthlyReserveAmount.value.toLocaleString()
 )
 
 const data = ref()
 
 const calculate = () => {
-  const { result, chartData } = calculateFinalReserveAmount(
-    monthlyReserveAmount.value,
+  const { result, chartData } = calculateMonthlyReserveAmount(
+    targetAmount.value,
     accumulationPeriod.value,
     annualYield.value
   )
-  finalReserveAmount.value = result
+  monthlyReserveAmount.value = result
   data.value = chartData
 }
 </script>
@@ -24,8 +24,8 @@ const calculate = () => {
 <template>
   <div class="grid">
     <div class="col">
-      <ReserveSimulationFormMonthlyReserveAmountInput
-        v-model="monthlyReserveAmount"
+      <ReserveSimulationFormTargetAmountInput
+        v-model="targetAmount"
         class="input"
       />
       <ReserveSimulationFormAccumulationPeriodInput
@@ -41,10 +41,10 @@ const calculate = () => {
       class="col-fixed w-15rem flex flex-column align-items-center justify-content-center"
     >
       <Button label="計算する" class="mb-4" @click="calculate" />
-      <div class="mb-4">最終積立金額</div>
+      <div class="mb-4">毎月積立金額</div>
       <div>
-        <span class="font-bold text-4xl">{{ finalReserveAmountLabel }}</span>
-        万円
+        <span class="font-bold text-4xl">{{ monthlyReserveAmountLabel }}</span>
+        年
       </div>
     </div>
   </div>

@@ -9,5 +9,6 @@ const amount = ref<number>(1)
     suffix="万円"
     :min="1"
     :max="100"
+    :show-slider="false"
   />
 </template>

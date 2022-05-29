@@ -9,5 +9,6 @@ const period = ref<number>(1)
     suffix="年"
     :min="1"
     :max="50"
+    :show-slider="false"
   />
 </template>

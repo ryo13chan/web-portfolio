@@ -6,9 +6,11 @@ type Props = {
   min: number
   max: number
   step?: number
+  showSlider?: boolean
 }
 const props = withDefaults(defineProps<Props>(), {
   step: 1,
+  showSlider: true,
 })
 
 type Emits = {
@@ -48,7 +50,15 @@ const decrease = (value: number) => {
         />
         <div class="w-2rem">{{ suffix }}</div>
       </div>
-      <div class="flex align-items-center">
+      <div
+        :class="{
+          flex: showSlider,
+          'align-items-center': showSlider,
+          'lg:flex': !showSlider,
+          'lg:align-items-center': !showSlider,
+          hidden: !showSlider,
+        }"
+      >
         <Button
           icon="pi pi-minus"
           class="p-button-rounded p-button-text mr-2"

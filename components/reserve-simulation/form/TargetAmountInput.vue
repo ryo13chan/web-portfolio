@@ -10,5 +10,6 @@ const amount = ref<number>(100)
     :min="100"
     :max="10000"
     :step="100"
+    :show-slider="false"
   />
 </template>

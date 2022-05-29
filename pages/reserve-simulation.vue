@@ -8,12 +8,10 @@
         <ReserveSimulationFinalReserveAmount />
       </TabPanel>
       <TabPanel header="積立期間">
-        <!-- TODO: グラフコンポーネント -->
-        Content II
+        <ReserveSimulationAccumulationPeriod />
       </TabPanel>
       <TabPanel header="毎月積立金額">
-        <!-- TODO: グラフコンポーネント -->
-        Content III
+        <ReserveSimulationMontylyReserveAmount />
       </TabPanel>
     </TabView>
   </div>

@@ -9,5 +9,6 @@ const percent = ref<number>(1)
     suffix="％"
     :min="1"
     :max="100"
+    :show-slider="false"
   />
 </template>
