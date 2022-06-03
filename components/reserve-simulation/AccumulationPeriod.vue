@@ -48,7 +48,13 @@ const calculate = () => {
       </div>
     </div>
   </div>
-  <ReserveSimulationResultChart v-if="data" :data="data" />
+  <ReserveSimulationResultChart v-if="data" :data="data">
+    <template #notice>
+      <div>※金額の小数点以下は切り捨て</div>
+      <div>※年末に１度再投資した複利で計算</div>
+      <div>※税、手数料などは非考慮</div>
+    </template>
+  </ReserveSimulationResultChart>
 </template>
 
 <style scoped lang="scss">

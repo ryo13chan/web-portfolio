@@ -119,7 +119,6 @@ export const calculateAccumulationPeriod = (
 // 毎月積立金額を計算
 // 減債基金係数を使用
 // ※減債基金係数を使用した関係上、複利の計算は年始に行う想定
-// TODO: 前年の収益は翌年の収益に含めず、翌年の元本に含めるようにする
 export const calculateMonthlyReserveAmount = (
   // 目標金額
   targetAmount: number,
@@ -129,8 +128,7 @@ export const calculateMonthlyReserveAmount = (
   annualYield: number
 ) => {
   // 減債基金係数
-  // TODO: 変数名
-  const test =
+  const sinkingFundFactor =
     Math.round(
       (annualYield /
         100 /
@@ -140,7 +138,7 @@ export const calculateMonthlyReserveAmount = (
 
   // 毎年積立金額
   // 目標額 * 減債基金係数
-  const yearlyReserveAmount = targetAmount * test
+  const yearlyReserveAmount = targetAmount * sinkingFundFactor
   // 毎月積立金額
   const monthlyReserveAmount = yearlyReserveAmount / 12
 
@@ -153,25 +151,17 @@ export const calculateMonthlyReserveAmount = (
 
   for (let i = 0; i < accumulationPeriod; i++) {
     // 元本合計
-    // １年目は元本、以降は前年の元本に元本を加算
+    // １年目は元本、以降は"元本"に"前年の元本 + 前年の収益"を加算
     const totalPrincipal =
-      i === 0 ? principal : principalData[i - 1] + principal
+      principal + (i === 0 ? 0 : principalData[i - 1] + profitData[i - 1])
     principalData.push(totalPrincipal)
     // 収益
-    // TODO: 収益の計算がおかしい・・、目標100、積立3、利回り10で3年目がぴったり100万になるようにする
     // １年目は0、以降は"(前年の元本合計 + 前年の収益)  * 利回り（年率）"
     // 小数点は切り捨て
-    // const profit =
-    //   i === 0
-    //     ? 0
-    //     : (principalData[i - 1] + (i === 1 ? 0 : profitData[i - 1])) *
-    //       (annualYield / 100)
     const profit =
       i === 0
-        ? totalPrincipal * (annualYield / 100)
-        : i === accumulationPeriod - 1
         ? 0
-        : (totalPrincipal + profitData[i - 1]) * (annualYield / 100)
+        : (principalData[i - 1] + profitData[i - 1]) * (annualYield / 100)
     profitData.push(profit)
   }
   const result = Math.ceil(monthlyReserveAmount * 10000)
