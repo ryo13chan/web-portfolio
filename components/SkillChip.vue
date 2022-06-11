@@ -23,3 +23,14 @@ const iconUrl = (skill: Skill): string => {
     </div>
   </Chip>
 </template>
+
+<style scoped lang="scss">
+.p-chip {
+  height: 2rem;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+</style>
