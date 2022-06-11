@@ -1,13 +1,18 @@
 <script setup lang="ts">
-type Skill = {
+export type Skill = {
   key: string
   label: string
   iconUrl?: string
+  noIcon?: boolean
 }
 type Props = {
   skill: Skill
 }
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  skill: (): Skill => {
+    return { key: '', label: '', iconUrl: '', noIcon: false }
+  },
+})
 
 const iconUrl = (skill: Skill): string => {
   if (skill.iconUrl) return skill.iconUrl
@@ -18,7 +23,7 @@ const iconUrl = (skill: Skill): string => {
 <template>
   <Chip>
     <div class="p-1 flex align-items-center">
-      <img :src="iconUrl(skill)" />
+      <img v-if="!skill.noIcon" :src="iconUrl(skill)" />
       <span>{{ skill.label }}</span>
     </div>
   </Chip>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Skill } from '~/components/skills/SkillPanel.vue'
+import { Skill } from '~/components/Skillchip.vue'
 type Props = {
   image: string
   title: string

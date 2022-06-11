@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Skill } from '~/components/skills/SkillPanel.vue'
+import { Skill } from '~/components/SkillChip.vue'
 import WorkCard from '~~/components/works/WorkCard.vue'
 
 const title = ref('Works')
@@ -12,12 +12,39 @@ const webPortfolioImageUrl = computed(
 )
 const webPortfolioSkills = ref<Skill[]>([
   {
+    key: 'nuxtjs',
+    label: 'Nuxt3',
+  },
+  {
+    key: 'vuejs',
+    label: 'Vue Composition API',
+  },
+  {
     key: 'typescript',
     label: 'TypeScript',
   },
   {
-    key: 'nuxtjs',
-    label: 'Nuxt.js',
+    key: 'primevue',
+    label: 'PrimeVUE',
+    noIcon: true,
+  },
+  {
+    key: 'primeflex',
+    label: 'PrimeFlex',
+    noIcon: true,
+  },
+  {
+    key: 'pinia',
+    label: 'Pinia',
+    noIcon: true,
+  },
+  {
+    key: 'github',
+    label: 'Github Actions',
+  },
+  {
+    key: 'github',
+    label: 'Github Pages',
   },
 ])
 
@@ -33,6 +60,10 @@ const mobilePortfolioSkills = ref<Skill[]>([
     key: 'flutter',
     label: 'Flutter',
   },
+  {
+    key: 'flutter',
+    label: 'Flutter Web',
+  },
 ])
 
 const reserveSimulationImageUrl = computed(
@@ -40,12 +71,26 @@ const reserveSimulationImageUrl = computed(
 )
 const reserveSimulationSkills = ref<Skill[]>([
   {
+    key: 'nuxtjs',
+    label: 'Nuxt3',
+  },
+  {
+    key: 'vuejs',
+    label: 'Vue Composition API',
+  },
+  {
     key: 'typescript',
     label: 'TypeScript',
   },
   {
-    key: 'nuxtjs',
-    label: 'Nuxt.js',
+    key: 'primevue',
+    label: 'PrimeVUE',
+    noIcon: true,
+  },
+  {
+    key: 'primeflex',
+    label: 'PrimeFlex',
+    noIcon: true,
   },
 ])
 </script>

@@ -1,9 +1,5 @@
 <script setup lang="ts">
-export type Skill = {
-  key: string
-  label: string
-  iconUrl?: string
-}
+import { Skill } from '~/components/SkillChip.vue'
 type Props = {
   title: string
   skills: Skill[]

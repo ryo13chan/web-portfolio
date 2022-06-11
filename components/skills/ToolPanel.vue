@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import SkillPanel, { Skill } from '~/components/skills/SkillPanel.vue'
+import SkillPanel from '~/components/skills/SkillPanel.vue'
+import { Skill } from '~/components/Skillchip.vue'
 const skills = ref<Skill[]>([
   {
     key: 'git',
