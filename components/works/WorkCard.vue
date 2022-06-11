@@ -6,7 +6,7 @@ type Props = {
   href?: string
   to?: string
   skills: Skill[]
-  description: string
+  description?: string
 }
 defineProps<Props>()
 </script>
@@ -29,7 +29,9 @@ defineProps<Props>()
       </div>
     </template>
     <template #content>
-      <div>{{ description }}</div>
+      <slot name="content">
+        <div>{{ description }}</div>
+      </slot>
     </template>
   </Card>
 </template>

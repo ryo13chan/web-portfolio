@@ -2,11 +2,16 @@
 import SelfIntroduction from '../components/about/SelfIntroduction.vue'
 import Timeline from '../components/about/Timeline.vue'
 import Career from '~~/components/about/Career.vue'
+
+const title = ref('About')
+useHead({
+  title,
+})
 </script>
 
 <template>
   <div class="mx-2 lg:px-8">
-    <h2>About</h2>
+    <h2>{{ title }}</h2>
     <div class="grid">
       <div class="col-12 xl:col-6">
         <SelfIntroduction />
@@ -15,7 +20,6 @@ import Career from '~~/components/about/Career.vue'
         <Timeline />
       </div>
       <div class="col-12">
-        <!-- TODO: 経歴を一覧表示 -->
         <Career />
       </div>
     </div>

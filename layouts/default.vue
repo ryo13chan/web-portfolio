@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - Web Portfolio` : 'Web Portfolio'
+  },
+})
+</script>
 <template>
   <AppHeader />
   <main>

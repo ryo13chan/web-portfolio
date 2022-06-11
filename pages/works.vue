@@ -2,6 +2,11 @@
 import { Skill } from '~/components/skills/SkillPanel.vue'
 import WorkCard from '~~/components/works/WorkCard.vue'
 
+const title = ref('Works')
+useHead({
+  title,
+})
+
 const webPortfolioImageUrl = computed(
   () => new URL('../assets/images/web-portfolio.png', import.meta.url).href
 )
@@ -30,10 +35,10 @@ const mobilePortfolioSkills = ref<Skill[]>([
   },
 ])
 
-const tsumitateSimulationImageUrl = computed(
-  () => new URL('../assets/images/mobile-portfolio.png', import.meta.url).href
+const reserveSimulationImageUrl = computed(
+  () => new URL('../assets/images/reserve-simulation.png', import.meta.url).href
 )
-const tsumitateSimulationSkills = ref<Skill[]>([
+const reserveSimulationSkills = ref<Skill[]>([
   {
     key: 'typescript',
     label: 'TypeScript',
@@ -47,7 +52,7 @@ const tsumitateSimulationSkills = ref<Skill[]>([
 
 <template>
   <div class="mx-2 lg:px-8">
-    <h2>Works</h2>
+    <h2>{{ title }}</h2>
     <div class="grid">
       <div class="col-12 lg:col-6">
         <WorkCard
@@ -69,12 +74,22 @@ const tsumitateSimulationSkills = ref<Skill[]>([
       </div>
       <div class="col-12 lg:col-6">
         <WorkCard
-          :image="tsumitateSimulationImageUrl"
+          :image="reserveSimulationImageUrl"
           title="積立シミュレーション"
           to="/reserve-simulation/"
-          :skills="tsumitateSimulationSkills"
-          description="積立シミュレーション"
-        />
+          :skills="reserveSimulationSkills"
+        >
+          <template #content>
+            <div>
+              数値を入力して<span class="font-bold">最終積立金額</span>、<span
+                class="font-bold"
+                >積立期間</span
+              >、<span class="font-bold">毎月積立金額</span
+              >をシミュレートできます。
+            </div>
+            <div>積立の推移はチャートで確認できます。</div>
+          </template>
+        </WorkCard>
       </div>
     </div>
   </div>
