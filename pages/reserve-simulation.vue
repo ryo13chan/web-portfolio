@@ -7,7 +7,7 @@ useHead({
 
 <template>
   <div class="mx-2 lg:px-8">
-    <h2>{{ title }}}</h2>
+    <h2>{{ title }}</h2>
     <TabView>
       <TabPanel header="最終積立金額">
         <ReserveSimulationFinalReserveAmount />
