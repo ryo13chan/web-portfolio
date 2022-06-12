@@ -64,6 +64,14 @@ const mobilePortfolioSkills = ref<Skill[]>([
     key: 'flutter',
     label: 'Flutter Web',
   },
+  {
+    key: 'github',
+    label: 'Github Actions',
+  },
+  {
+    key: 'github',
+    label: 'Github Pages',
+  },
 ])
 
 const reserveSimulationImageUrl = computed(
