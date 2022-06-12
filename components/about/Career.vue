@@ -1,38 +1,16 @@
 <script setup lang="ts">
-type Project = {
-  title: string
-  startDate: string
-  endDate?: string
-  works: string[]
-  skills: string[]
-}
+import dayjs from 'dayjs'
+import { Project } from '@/composables/projectData'
 
-const projects = ref<Project[]>([
-  {
-    title: '飲食向け受発注システム開発',
-    startDate: '2021/01',
-    works: ['あああああ', 'あああああ'],
-    skills: ['あああああ', 'あああああ'],
-  },
-  {
-    title: '飲食向け受発注システム開発',
-    startDate: '2021/01',
-    endDate: '2021/01',
-    works: ['あああああ', 'あああああ'],
-    skills: ['あああああ', 'あああああ'],
-  },
-  {
-    title: '飲食向け受発注システム開発',
-    startDate: '2021/01',
-    endDate: '2021/01',
-    works: ['あああああ', 'あああああ'],
-    skills: ['あああああ', 'あああああ'],
-  },
-])
+const projects = ref(projectData)
 
 const projectDuration = (project: Project) => {
-  if (!project.endDate) return `${project.startDate} -`
-  return `${project.startDate} - ${project.endDate}`
+  const startDate = dayjs(project.startDate).format('YYYY年MM月')
+  if (!project.endDate) {
+    return `${startDate} - （現在）`
+  }
+  const endDate = dayjs(project.endDate).endOf('month').format('YYYY年MM月')
+  return `${startDate} - ${endDate}`
 }
 
 const activeIndexes = ref<number[]>([])
@@ -68,13 +46,17 @@ const close = () => {
               <div>{{ project.title }}</div>
             </div>
           </template>
-          <h4>担当業務</h4>
+          <h4 class="mt-3 mb-2">担当業務</h4>
           <ul class="pl-4">
-            <li v-for="(work, wi) in project.works" :key="wi">{{ work }}</li>
+            <li v-for="(work, wi) in project.works" :key="wi" class="pb-2">
+              {{ work }}
+            </li>
           </ul>
-          <h4>主な使用技術</h4>
+          <h4 class="mt-3 mb-2">主な使用技術</h4>
           <ul class="pl-4">
-            <li v-for="(skill, si) in project.skills" :key="si">{{ skill }}</li>
+            <li v-for="(skill, si) in project.skills" :key="si" class="pb-2">
+              {{ skill }}
+            </li>
           </ul>
         </AccordionTab>
       </Accordion>
