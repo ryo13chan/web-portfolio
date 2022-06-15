@@ -9,6 +9,10 @@ useHead({
 
 const toAbout = () => router.push({ path: '/about' })
 const toWorks = () => router.push({ path: '/works' })
+
+const iconImageUrl = computed(
+  () => new URL('../assets/images/icon.jpg', import.meta.url).href
+)
 </script>
 
 <template>
@@ -29,7 +33,7 @@ const toWorks = () => router.push({ path: '/works' })
       </div>
     </div>
     <Avatar
-      image="assets/images/icon.jpg"
+      :image="iconImageUrl"
       class="mr-3 w-15rem h-15rem md:w-15rem md:h-15rem"
       shape="circle"
     />

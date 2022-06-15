@@ -27,6 +27,10 @@ const menus = ref<menuItem[]>([
   },
 ])
 
+const iconImageUrl = computed(
+  () => new URL('../assets/images/icon.jpg', import.meta.url).href
+)
+
 const visibleMenu = ref<boolean>(false)
 const show = () => (visibleMenu.value = true)
 </script>
@@ -36,7 +40,7 @@ const show = () => (visibleMenu.value = true)
     <div class="flex justify-content-between align-items-center">
       <div class="flex align-items-center">
         <Avatar
-          image="../assets/images/icon.jpg"
+          :image="iconImageUrl"
           class="mr-3"
           size="xlarge"
           shape="circle"
