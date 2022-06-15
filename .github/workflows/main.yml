@@ -12,9 +12,6 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
         
-      - name: Set Base URL
-        run: NUXT_APP_BASE_URL=/web-portfolio/
-
       - name: Install and Build 🔧
         run: |
           yarn
