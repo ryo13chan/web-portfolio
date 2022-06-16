@@ -39,12 +39,9 @@ const webPortfolioSkills = ref<Skill[]>([
     noIcon: true,
   },
   {
-    key: 'github',
-    label: 'Github Actions',
-  },
-  {
-    key: 'github',
-    label: 'Github Pages',
+    key: 'netlify',
+    label: 'Netlify',
+    noIcon: true,
   },
 ])
 
