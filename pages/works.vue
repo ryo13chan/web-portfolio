@@ -108,7 +108,7 @@ const reserveSimulationSkills = ref<Skill[]>([
         <WorkCard
           :image="webPortfolioImageUrl"
           title="Web Portfolio"
-          href="https://ryo13chan.github.io/web-portfolio/"
+          to="/"
           :skills="webPortfolioSkills"
           description="当サイトです。"
         />
@@ -118,6 +118,7 @@ const reserveSimulationSkills = ref<Skill[]>([
           :image="mobilePortfolioImageUrl"
           title="Mobile Portfolio"
           href="https://ryo13chan.github.io/mobile-portfolio/"
+          target="_blank"
           :skills="mobilePortfolioSkills"
           description="モバイルエンジニアとしてのポートフォリオサイトです。"
         />

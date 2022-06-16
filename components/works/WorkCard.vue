@@ -5,6 +5,7 @@ type Props = {
   title: string
   href?: string
   to?: string
+  target?: string
   skills: Skill[]
   description?: string
 }
@@ -14,12 +15,12 @@ defineProps<Props>()
 <template>
   <Card>
     <template #header>
-      <NuxtLink :href="href" :to="to" target="_blank">
+      <NuxtLink :href="href" :to="to" :target="target">
         <img :src="image" class="p-2" />
       </NuxtLink>
     </template>
     <template #title>
-      <NuxtLink :href="href" :to="to" target="_blank" class="title">{{
+      <NuxtLink :href="href" :to="to" :target="target" class="title">{{
         title
       }}</NuxtLink>
     </template>
