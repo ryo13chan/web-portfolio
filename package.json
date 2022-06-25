@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "nuxi build",
+    "build": "nuxi build && cp _redirects dist/_redirects",
     "start": "node .output/server/index.mjs",
     "lint:js": "eslint --ext .ts,.js,.vue . --fix --ignore-path .gitignore .",
     "lint:css": "stylelint --fix '**/*.{vue,scss,css}' --ignore-path .gitignore",

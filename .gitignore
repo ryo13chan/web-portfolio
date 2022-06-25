@@ -7,4 +7,3 @@ nuxt.d.ts
 # Local Netlify folder
 .netlify
 dist
-netlify.toml

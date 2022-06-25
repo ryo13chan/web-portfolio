@@ -1,0 +1,5 @@
+[build]
+  # 公開ディレクトリ
+  publish = "dist"
+  # デプロイ前実行コマンド
+  command = "yarn build"

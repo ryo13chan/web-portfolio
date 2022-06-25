@@ -31,6 +31,7 @@ export default defineNuxtConfig({
         '/rakuten': {
           target: 'https://books.rakuten.co.jp',
           changeOrigin: true,
+          secure: false,
           rewrite: (path) => path.replace(/^\/rakuten/, ''),
         },
       },
