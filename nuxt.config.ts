@@ -26,6 +26,15 @@ export default defineNuxtConfig({
         },
       },
     },
+    server: {
+      proxy: {
+        '/rakuten': {
+          target: 'https://books.rakuten.co.jp',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/rakuten/, ''),
+        },
+      },
+    },
   },
   link: [{ rel: 'icon', type: 'image/png', href: '/favicon.ico' }],
 })

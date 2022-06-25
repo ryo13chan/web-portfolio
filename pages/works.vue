@@ -98,6 +98,34 @@ const reserveSimulationSkills = ref<Skill[]>([
     noIcon: true,
   },
 ])
+
+const newComicsImageUrl = computed(
+  () => new URL('../assets/images/reserve-simulation.png', import.meta.url).href
+)
+const newComicsSkills = ref<Skill[]>([
+  {
+    key: 'nuxtjs',
+    label: 'Nuxt3',
+  },
+  {
+    key: 'vuejs',
+    label: 'Vue Composition API',
+  },
+  {
+    key: 'typescript',
+    label: 'TypeScript',
+  },
+  {
+    key: 'primevue',
+    label: 'PrimeVUE',
+    noIcon: true,
+  },
+  {
+    key: 'primeflex',
+    label: 'PrimeFlex',
+    noIcon: true,
+  },
+])
 </script>
 
 <template>
@@ -127,7 +155,8 @@ const reserveSimulationSkills = ref<Skill[]>([
         <WorkCard
           :image="reserveSimulationImageUrl"
           title="積立シミュレーション"
-          to="/reserve-simulation/"
+          href="/reserve-simulation/"
+          target="_blank"
           :skills="reserveSimulationSkills"
         >
           <template #content>
@@ -139,6 +168,20 @@ const reserveSimulationSkills = ref<Skill[]>([
               >をシミュレートできます。
             </div>
             <div>積立の推移はチャートで確認できます。</div>
+          </template>
+        </WorkCard>
+      </div>
+      <div class="col-12 lg:col-6">
+        <WorkCard
+          :image="newComicsImageUrl"
+          title="新刊コミック一覧"
+          href="/new-comics/"
+          target="_blank"
+          :skills="newComicsSkills"
+        >
+          <template #content>
+            <div>近日発売予定のコミックを確認できます。</div>
+            <div>楽天の新刊コミックAPIを使用しています。</div>
           </template>
         </WorkCard>
       </div>
