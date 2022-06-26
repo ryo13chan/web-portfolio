@@ -57,6 +57,7 @@ const dailyComicCount = (date: any) => {
 const calendar = ref()
 onMounted(async () => {
   await newComicStore.getNewComics()
+
   if (
     !comicsListGroupByDate.value ||
     comicsListGroupByDate.value.length === 0
@@ -72,10 +73,13 @@ onMounted(async () => {
 })
 
 const copyComics = () => {
-  // TODO: 一覧作成
-  // const comics = 'comics'
+  // 一覧作成
   const comics = comicsListGroupByDate.value
-    .filter((obj) => isSelectedReleaseDate(obj.date))
+    .filter(
+      (obj) =>
+        isSelectedReleaseDate(obj.date) &&
+        obj.list.some((comic) => isSelectedLabelComic(comic))
+    )
     .map(
       (obj) =>
         `【${obj.date}】\n` +
@@ -175,8 +179,8 @@ const copyComics = () => {
             </div>
           </template>
         </DataView>
-      </template></Card
-    >
+      </template>
+    </Card>
   </div>
 </template>
 

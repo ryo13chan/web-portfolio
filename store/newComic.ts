@@ -10,7 +10,12 @@ export const labelKey = 10
 // 「日付」列のキー
 export const dateKey = 20
 
-export type Comic = { [dateKey]: string; [labelKey]: string }
+export type Comic = {
+  [titleKey]: string
+  [authorKey]: string
+  [dateKey]: string
+  [labelKey]: string
+}
 type ComicListGroupByDate = {
   date: string
   list: Comic[]
