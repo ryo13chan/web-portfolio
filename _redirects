@@ -1,2 +1,3 @@
+https://ryo-portfolio.netlify.app/rakuten/event/book/comic/calendar/:year/:month/js/booklist.json https://books.rakuten.co.jp/event/book/comic/calendar/:year/:month/js/booklist.json 200
 https://ryo-portfolio.netlify.app/rakuten/event/book/comic/calendar/js/booklist.json https://books.rakuten.co.jp/event/book/comic/calendar/js/booklist.json 200
 /* /.netlify/functions/server 200
