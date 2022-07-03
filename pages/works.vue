@@ -100,7 +100,7 @@ const reserveSimulationSkills = ref<Skill[]>([
 ])
 
 const newComicsImageUrl = computed(
-  () => new URL('../assets/images/reserve-simulation.png', import.meta.url).href
+  () => new URL('../assets/images/new-comics.png', import.meta.url).href
 )
 const newComicsSkills = ref<Skill[]>([
   {
