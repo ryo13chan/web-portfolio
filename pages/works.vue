@@ -155,8 +155,7 @@ const newComicsSkills = ref<Skill[]>([
         <WorkCard
           :image="reserveSimulationImageUrl"
           title="積立シミュレーション"
-          href="/reserve-simulation/"
-          target="_blank"
+          to="/reserve-simulation/"
           :skills="reserveSimulationSkills"
         >
           <template #content>
@@ -175,8 +174,7 @@ const newComicsSkills = ref<Skill[]>([
         <WorkCard
           :image="newComicsImageUrl"
           title="新刊コミック一覧"
-          href="/new-comics/"
-          target="_blank"
+          to="/new-comics/"
           :skills="newComicsSkills"
         >
           <template #content>
