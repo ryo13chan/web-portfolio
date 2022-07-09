@@ -13,10 +13,10 @@ useHead({
   <div class="mx-2 lg:px-8">
     <h2>{{ title }}</h2>
     <div class="grid">
-      <div class="col-12 xl:col-6">
+      <div class="col-12">
         <SelfIntroduction />
       </div>
-      <div class="col-12 xl:col-6">
+      <div class="col-12">
         <Timeline />
       </div>
       <div class="col-12">
