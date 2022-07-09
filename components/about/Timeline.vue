@@ -64,5 +64,3 @@ const events = ref<event[]>([
     </template>
   </Card>
 </template>
-
-<style scoped lang="scss"></style>
