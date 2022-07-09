@@ -23,7 +23,7 @@ const iconUrl = (skill: Skill): string => {
 <template>
   <Chip>
     <div class="p-1 flex align-items-center">
-      <img v-if="!skill.noIcon" :src="iconUrl(skill)" />
+      <img v-if="!skill.noIcon" v-lazy="iconUrl(skill)" />
       <span>{{ skill.label }}</span>
     </div>
   </Chip>

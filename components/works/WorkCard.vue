@@ -16,7 +16,7 @@ defineProps<Props>()
   <Card>
     <template #header>
       <NuxtLink :href="href" :to="to" :target="target">
-        <img :src="image" class="p-2" />
+        <img v-lazy="image" class="p-2" />
       </NuxtLink>
     </template>
     <template #title>
