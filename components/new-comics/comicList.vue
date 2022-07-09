@@ -116,6 +116,7 @@ const copyComics = () => {
               ref="calendar"
               v-model="releaseDate"
               show-icon
+              show-button-bar
               date-format="yy-mm-dd"
               selection-mode="multiple"
               placeholder="発売日を選択"
