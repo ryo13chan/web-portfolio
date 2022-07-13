@@ -11,7 +11,7 @@
     "lint:css": "stylelint --fix '**/*.{vue,scss,css}' --ignore-path .gitignore",
     "netlify": "netlify",
     "preview": "nuxi preview",
-    "netlify:deploy": "netlify deploy --build --prod --open",
+    "netlify:deploy": "vitest run && netlify deploy --build --prod --open",
     "prepare": "husky install"
   },
   "devDependencies": {
