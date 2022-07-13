@@ -43,6 +43,11 @@ const webPortfolioSkills = ref<Skill[]>([
     label: 'Netlify',
     noIcon: true,
   },
+  {
+    key: 'vitest',
+    label: 'Vitest',
+    noIcon: true,
+  },
 ])
 
 const mobilePortfolioImageUrl = computed(
