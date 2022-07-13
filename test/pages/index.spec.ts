@@ -13,12 +13,17 @@ describe('Home画面', () => {
     },
   })
 
-  test('見出しが表示されること', () => {
+  describe('見出し', () => {
     const h1 = wrapper.find('h1')
-    expect(h1.text()).toBe("Welcome to Ryo's Portfolio!")
+
+    test('表示されること', () => {
+      expect(h1.text()).toBe("Welcome to Ryo's Portfolio!")
+    })
   })
+
   describe('アイコン', () => {
     const icon = wrapper.findComponent(Avatar)
+
     test('表示されること', () => {
       expect(icon.exists()).toBe(true)
     })
@@ -28,19 +33,23 @@ describe('Home画面', () => {
       ).toBe(true)
     })
   })
+
   describe('自己紹介ボタン', () => {
     const button = wrapper
       .findAllComponents(Button)
       .find((c) => c.text() === '自己紹介')
+
     test('表示されること', () => {
       expect(button?.exists()).toBe(true)
     })
     test.skip('クリックでAbout画面に遷移すること', () => {})
   })
+
   describe('作品集ボタン', () => {
     const button = wrapper
       .findAllComponents(Button)
       .find((c) => c.text() === '作品集')
+
     test('表示されること', () => {
       expect(button?.exists()).toBe(true)
     })
