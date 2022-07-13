@@ -8,3 +8,4 @@ nuxt.d.ts
 .netlify
 dist
 coverage
+auto-imports.d.ts
