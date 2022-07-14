@@ -6,6 +6,13 @@ import Button from 'primevue/button'
 
 vi.stubGlobal('useHead', () => {})
 
+const mockRouterPush = vi.fn()
+vi.mock('vue-router', () => ({
+  useRouter: () => ({
+    push: mockRouterPush,
+  }),
+}))
+
 describe('Home画面', () => {
   const wrapper = mount(Home, {
     global: {
@@ -42,7 +49,10 @@ describe('Home画面', () => {
     test('表示されること', () => {
       expect(button?.exists()).toBe(true)
     })
-    test.skip('クリックでAbout画面に遷移すること', () => {})
+    test('クリックでAbout画面に遷移すること', () => {
+      button?.trigger('click')
+      expect(mockRouterPush).toHaveBeenCalledWith({ path: '/about' })
+    })
   })
 
   describe('作品集ボタン', () => {
@@ -53,6 +63,9 @@ describe('Home画面', () => {
     test('表示されること', () => {
       expect(button?.exists()).toBe(true)
     })
-    test.skip('クリックでWorks画面に遷移すること', () => {})
+    test('クリックでWorks画面に遷移すること', () => {
+      button?.trigger('click')
+      expect(mockRouterPush).toHaveBeenCalledWith({ path: '/works' })
+    })
   })
 })
