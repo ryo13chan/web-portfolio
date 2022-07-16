@@ -1,16 +1,23 @@
 import { mount } from '@vue/test-utils'
 import { test, expect, vi, describe } from 'vitest'
 import { createTestingPinia } from '@pinia/testing'
-import NewComics from '~/pages/works/new-comics.vue'
-import ComicList from '~/components/new-comics/comicList.vue'
+import ReserveSimulation from '~/pages/works/reserve-simulation.vue'
+import FinalReserveAmount from '~/components/reserve-simulation/FinalReserveAmount.vue'
+import AccumulationPeriod from '~/components/reserve-simulation/AccumulationPeriod.vue'
+import MonthlyReserveAmount from '~/components/reserve-simulation/MonthlyReserveAmount.vue'
 import TabPanel from 'primevue/tabpanel'
 
 vi.stubGlobal('useHead', () => {})
 
 describe('新刊コミック一覧画面', () => {
-  const wrapper = mount(NewComics, {
+  const wrapper = mount(ReserveSimulation, {
     global: {
-      components: { ComicList, TabPanel },
+      components: {
+        FinalReserveAmount,
+        AccumulationPeriod,
+        MonthlyReserveAmount,
+        TabPanel,
+      },
       plugins: [createTestingPinia()],
     },
   })
@@ -19,7 +26,7 @@ describe('新刊コミック一覧画面', () => {
     const h2 = wrapper.find('h2')
 
     test('表示されること', () => {
-      expect(h2.text()).toBe('新刊コミック一覧')
+      expect(h2.text()).toBe('積立シミュレーション')
     })
   })
 
@@ -27,32 +34,52 @@ describe('新刊コミック一覧画面', () => {
     const tabPanels = wrapper.findAllComponents(TabPanel)
 
     test('タブ数が正しいこと', () => {
-      expect(tabPanels.length).toBe(2)
+      expect(tabPanels.length).toBe(3)
     })
 
-    describe('前月', () => {
-      const prevComicTabPanel = tabPanels.at(0)
+    describe('最終積立金額', () => {
+      const finalReserveAmountTabPanel = tabPanels.at(0)
 
       test('タブが表示されること', () => {
-        expect(prevComicTabPanel?.vm.$props.header).toBe('前月')
+        expect(finalReserveAmountTabPanel?.vm.$props.header).toBe(
+          '最終積立金額'
+        )
       })
       test('一覧が表示されること', () => {
-        const prevComicList = prevComicTabPanel?.findComponent(ComicList)
+        const finalReserveAmount =
+          finalReserveAmountTabPanel?.findComponent(FinalReserveAmount)
 
-        expect(prevComicList?.exists()).toBe(true)
+        expect(finalReserveAmount?.exists()).toBe(true)
       })
     })
 
-    describe('最新', () => {
-      const newComicTabPanel = tabPanels.at(1)
+    describe('積立期間', () => {
+      const accumulationPeriodTabPanel = tabPanels.at(1)
 
       test('タブが表示されること', () => {
-        expect(newComicTabPanel?.vm.$props.header).toBe('最新')
+        expect(accumulationPeriodTabPanel?.vm.$props.header).toBe('積立期間')
       })
       test('一覧が表示されること', () => {
-        const newComicList = newComicTabPanel?.findComponent(ComicList)
+        const accumulationPeriod =
+          accumulationPeriodTabPanel?.findComponent(AccumulationPeriod)
 
-        expect(newComicList?.exists()).toBe(true)
+        expect(accumulationPeriod?.exists()).toBe(true)
+      })
+    })
+
+    describe('毎月積立金額', () => {
+      const monthlyReserveAmountTabPanel = tabPanels.at(2)
+
+      test('タブが表示されること', () => {
+        expect(monthlyReserveAmountTabPanel?.vm.$props.header).toBe(
+          '毎月積立金額'
+        )
+      })
+      test('一覧が表示されること', () => {
+        const monthlyReserveAmount =
+          monthlyReserveAmountTabPanel?.findComponent(MonthlyReserveAmount)
+
+        expect(monthlyReserveAmount?.exists()).toBe(true)
       })
     })
   })

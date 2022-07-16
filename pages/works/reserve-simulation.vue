@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import AccumulationPeriod from '~/components/reserve-simulation/AccumulationPeriod.vue'
+import FinalReserveAmount from '~/components/reserve-simulation/FinalReserveAmount.vue'
+import MonthlyReserveAmount from '~/components/reserve-simulation/MonthlyReserveAmount.vue'
+
 const title = ref('積立シミュレーション')
 useHead({
   title,
@@ -10,13 +14,13 @@ useHead({
     <h2>{{ title }}</h2>
     <TabView>
       <TabPanel header="最終積立金額">
-        <ReserveSimulationFinalReserveAmount />
+        <FinalReserveAmount />
       </TabPanel>
       <TabPanel header="積立期間">
-        <ReserveSimulationAccumulationPeriod />
+        <AccumulationPeriod />
       </TabPanel>
       <TabPanel header="毎月積立金額">
-        <ReserveSimulationMonthlyReserveAmount />
+        <MonthlyReserveAmount />
       </TabPanel>
     </TabView>
   </div>
