@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { useGitStore } from '../store/git'
+import { useGitStore } from '~/store/git'
 import dayjs from 'dayjs'
 
 const gitStore = useGitStore()

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
-import { Project } from '@/composables/projectData'
+import { Project, projectData } from '~/composables/projectData'
 
 const projects = ref(projectData)
 

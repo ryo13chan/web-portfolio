@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import FrontendPanel from '~~/components/skills/FrontendPanel.vue'
-import BackendPanel from '~~/components/skills/BackendPanel.vue'
-import DBInfraPanel from '../components/skills/DBInfraPanel.vue'
-import ToolPanel from '../components/skills/ToolPanel.vue'
-import InterestPanel from '../components/skills/InterestPanel.vue'
+import FrontendPanel from '~/components/skills/FrontendPanel.vue'
+import BackendPanel from '~/components/skills/BackendPanel.vue'
+import DBInfraPanel from '~/components/skills/DBInfraPanel.vue'
+import ToolPanel from '~/components/skills/ToolPanel.vue'
+import InterestPanel from '~/components/skills/InterestPanel.vue'
 
 const title = ref('Skills')
 useHead({

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ComicList from '../../components/new-comics/comicList.vue'
+import ComicList from '~/components/new-comics/comicList.vue'
 
 const title = ref('新刊コミック一覧')
 useHead({

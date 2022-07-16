@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Skill } from '~/components/SkillChip.vue'
-import WorkCard from '~~/components/works/WorkCard.vue'
+import WorkCard from '~/components/works/WorkCard.vue'
 
 const title = ref('Works')
 useHead({

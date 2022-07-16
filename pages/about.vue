@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import SelfIntroduction from '../components/about/SelfIntroduction.vue'
-import Timeline from '../components/about/Timeline.vue'
-import Career from '~~/components/about/Career.vue'
+import SelfIntroduction from '~/components/about/SelfIntroduction.vue'
+import Timeline from '~/components/about/Timeline.vue'
+import Career from '~/components/about/Career.vue'
 
 const title = ref('About')
 useHead({

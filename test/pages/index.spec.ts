@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { test, expect, vi, describe } from 'vitest'
-import Home from '../../pages/index.vue'
+import Home from '~/pages/index.vue'
 import Avatar from 'primevue/avatar'
 import Button from 'primevue/button'
 

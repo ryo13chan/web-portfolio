@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import { test, expect, describe } from 'vitest'
 import { createTestingPinia } from '@pinia/testing'
-import AppHeader from '../../components/AppHeader.vue'
-import GitLastCommit from '../../components/GitLastCommit.vue'
+import AppHeader from '~/components/AppHeader.vue'
+import GitLastCommit from '~/components/GitLastCommit.vue'
 import Avatar from 'primevue/avatar'
 
 describe('ヘッダー', () => {
