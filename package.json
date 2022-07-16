@@ -17,6 +17,7 @@
   "devDependencies": {
     "@nuxt/test-utils-edge": "^3.0.0-rc.4-27621410.b045b71",
     "@nuxtjs/eslint-config-typescript": "^9.0.0",
+    "@pinia/testing": "^0.0.12",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "@vue/eslint-config-prettier": "^7.0.0",

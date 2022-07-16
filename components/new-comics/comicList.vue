@@ -169,13 +169,13 @@ const copyComics = () => {
               :key="comic[idKey]"
               class="mb-3 pl-7 pb-3 border-bottom-1 border-300"
             >
-              <NuxtLink
+              <nuxt-link
                 :href="`https://www.amazon.co.jp/s?k=${comic[titleKey]}`"
                 target="_blank"
                 class="comic-title"
               >
                 {{ comic[titleKey] }}
-              </NuxtLink>
+              </nuxt-link>
               <div class="flex justify-content-between mt-2">
                 <div>{{ comic[authorKey] }}</div>
                 <div>{{ comic[labelKey] }}</div>

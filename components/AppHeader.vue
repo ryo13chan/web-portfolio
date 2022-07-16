@@ -51,7 +51,7 @@ const show = () => (visibleMenu.value = true)
         <!-- PC用メニュー -->
         <ul class="hidden lg:flex list-none">
           <li v-for="menu in menus" :key="menu.key" class="menu-item px-3">
-            <NuxtLink :to="menu.to">{{ menu.label }}</NuxtLink>
+            <nuxt-link :to="menu.to">{{ menu.label }}</nuxt-link>
           </li>
         </ul>
         <!-- SP用メニューアイコン -->
@@ -64,7 +64,7 @@ const show = () => (visibleMenu.value = true)
         <Sidebar v-model:visible="visibleMenu" position="right">
           <ul class="list-none">
             <li v-for="menu in menus" :key="menu.key" class="menu-item my-4">
-              <NuxtLink :to="menu.to">{{ menu.label }}</NuxtLink>
+              <nuxt-link :to="menu.to">{{ menu.label }}</nuxt-link>
             </li>
           </ul>
         </Sidebar>

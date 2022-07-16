@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { useGitStore } from '~/store/git'
+import { useGitStore } from '../store/git'
 import dayjs from 'dayjs'
 
 const gitStore = useGitStore()
@@ -21,9 +21,9 @@ gitStore.getCommit()
       <span class="mr-2">{{ date }}</span>
       <Tag v-if="isShowNewLabel" severity="info" value="New" />
     </div>
-    <NuxtLink :href="commitUrl" target="_blank" class="message text-lg">
+    <nuxt-link :href="commitUrl" target="_blank" class="message text-lg">
       {{ commitMessage }}
-    </NuxtLink>
+    </nuxt-link>
   </div>
 </template>
 

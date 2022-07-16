@@ -15,14 +15,14 @@ defineProps<Props>()
 <template>
   <Card>
     <template #header>
-      <NuxtLink :href="href" :to="to" :target="target">
+      <nuxt-link :href="href" :to="to" :target="target">
         <img v-lazy="image" class="p-2" />
-      </NuxtLink>
+      </nuxt-link>
     </template>
     <template #title>
-      <NuxtLink :href="href" :to="to" :target="target" class="title">{{
+      <nuxt-link :href="href" :to="to" :target="target" class="title">{{
         title
-      }}</NuxtLink>
+      }}</nuxt-link>
     </template>
     <template #subtitle>
       <div class="skill-area">
