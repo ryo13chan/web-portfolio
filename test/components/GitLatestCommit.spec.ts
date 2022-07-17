@@ -34,7 +34,7 @@ describe('Git最新コミット', () => {
     commit: {
       message: 'first commit',
       author: {
-        date: '2022-04-23',
+        date: dayjs().subtract(1, 'w').format('YYYY-MM-DD'),
       },
     },
   }
@@ -43,7 +43,9 @@ describe('Git最新コミット', () => {
     const commitDate = wrapper.find('span')
 
     test('表示されること', () => {
-      expect(commitDate.text()).toBe('2022-04-23')
+      expect(commitDate.text()).toBe(
+        dayjs().subtract(1, 'w').format('YYYY-MM-DD')
+      )
     })
   })
 
