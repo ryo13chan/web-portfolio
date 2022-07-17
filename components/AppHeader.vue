@@ -45,7 +45,7 @@ const show = () => (visibleMenu.value = true)
           size="xlarge"
           shape="circle"
         />
-        <GitLastCommit />
+        <GitLatestCommit />
       </div>
       <nav class="flex align-items-center">
         <!-- PC用メニュー -->

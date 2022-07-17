@@ -1,13 +1,13 @@
 import { mount } from '@vue/test-utils'
 import { test, expect, describe } from 'vitest'
 import AppFooter from '~/components/AppFooter.vue'
-import GitLastCommit from '~/components/GitLastCommit.vue'
+import GitLatestCommit from '~/components/GitLatestCommit.vue'
 import Avatar from 'primevue/avatar'
 
 describe('フッター', () => {
   const wrapper = mount(AppFooter, {
     global: {
-      components: { Avatar, GitLastCommit },
+      components: { Avatar, GitLatestCommit },
     },
   })
 

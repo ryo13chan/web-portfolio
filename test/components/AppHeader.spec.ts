@@ -2,22 +2,22 @@ import { mount } from '@vue/test-utils'
 import { test, expect, describe } from 'vitest'
 import { createTestingPinia } from '@pinia/testing'
 import AppHeader from '~/components/AppHeader.vue'
-import GitLastCommit from '~/components/GitLastCommit.vue'
+import GitLatestCommit from '~/components/GitLatestCommit.vue'
 import Avatar from 'primevue/avatar'
 
 describe('ヘッダー', () => {
   const wrapper = mount(AppHeader, {
     global: {
-      components: { Avatar, GitLastCommit },
+      components: { Avatar, GitLatestCommit },
       plugins: [createTestingPinia()],
     },
   })
 
   describe('Git最新コミット', () => {
-    const gitLastCommit = wrapper.findComponent(GitLastCommit)
+    const gitLatestCommit = wrapper.findComponent(GitLatestCommit)
 
     test('表示されること', () => {
-      expect(gitLastCommit.exists()).toBe(true)
+      expect(gitLatestCommit.exists()).toBe(true)
     })
   })
 
