@@ -2,6 +2,7 @@ export type Project = {
   title: string
   startDate: string
   endDate?: string
+  period?: string
   works: string[]
   skills: string[]
 }
@@ -24,6 +25,7 @@ export const projectData: Project[] = [
     title: 'マーケティングツールWebアプリ開発',
     startDate: '2020/09',
     endDate: '2020/12',
+    period: '4か月',
     works: [
       'マーケティングツールWebアプリの画面設計・実装',
       'Slim+Pug+jQueryからVue.jsへの移行対応',
@@ -36,6 +38,7 @@ export const projectData: Project[] = [
     title: '建築資材ECサイトシステム開発',
     startDate: '2020/04',
     endDate: '2020/08',
+    period: '5か月',
     works: [
       'ECサイトの画面設計・実装',
       'APIの設計・実装',
@@ -48,6 +51,7 @@ export const projectData: Project[] = [
     title: 'ファンコミュニティサイトシステム開発',
     startDate: '2019/03',
     endDate: '2020/03',
+    period: '1年1か月',
     works: [
       'ファンコミュニティサイトの画面設計・実装',
       'APIの設計・実装',
@@ -62,6 +66,7 @@ export const projectData: Project[] = [
     title: 'Web面接システム開発',
     startDate: '2018/09',
     endDate: '2019/02',
+    period: '6か月',
     works: [
       'APIの設計・実装',
       '社内向け管理画面の画面設計・実装',
@@ -74,6 +79,7 @@ export const projectData: Project[] = [
     title: 'クラウドファンディングサイトシステム開発',
     startDate: '2017/11',
     endDate: '2018/08',
+    period: '10か月',
     works: [
       'クラウドファンディングサイトの画面設計・実装',
       'APIの設計・実装',
@@ -87,6 +93,7 @@ export const projectData: Project[] = [
     title: '金融系システム開発',
     startDate: '2015/04',
     endDate: '2017/10',
+    period: '2年7か月',
     works: [
       'クレジットカード金額計算システムの設計・実装',
       '投資家向け取引システム設計・実装',

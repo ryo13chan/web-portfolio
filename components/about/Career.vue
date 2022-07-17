@@ -6,11 +6,12 @@ const projects = ref(projectData)
 
 const projectDuration = (project: Project) => {
   const startDate = dayjs(project.startDate).format('YYYY年MM月')
+  const period = project.period
   if (!project.endDate) {
     return `${startDate} - （現在）`
   }
   const endDate = dayjs(project.endDate).endOf('month').format('YYYY年MM月')
-  return `${startDate} - ${endDate}`
+  return `${startDate} - ${endDate}（${period}）`
 }
 
 const activeIndexes = ref<number[]>([])
