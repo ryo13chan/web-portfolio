@@ -18,8 +18,7 @@ withDefaults(defineProps<Props>(), {
 
 const thumbnailImageUrl = computed(
   () => (thumbnail: string) =>
-    new URL(`../../assets/images/${thumbnail || 'icon.jpg'}`, import.meta.url)
-      .href
+    new URL('../../assets/images/icon.jpg', import.meta.url).href
 )
 const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
 const blogTag = (key: string) => blogTagData.find((tag) => tag.key === key)
