@@ -8,7 +8,7 @@ useHead({
 
 const thumbnailImageUrl = computed(
   () => (thumbnail: string) =>
-    new URL('../../../assets/images/icon.jpg', import.meta.url).href
+    new URL('../../../assets/images/programmer.png', import.meta.url).href
 )
 const tags = (tags: string[]) =>
   tags.map((tag: string) => blogTagData.find((tagData) => tagData.key === tag))

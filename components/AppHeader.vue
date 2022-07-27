@@ -33,7 +33,7 @@ const menus = ref<menuItem[]>([
 ])
 
 const iconImageUrl = computed(
-  () => new URL('../assets/images/programmer.png', import.meta.url).href
+  () => new URL('../assets/images/icon.jpg', import.meta.url).href
 )
 
 const isActiveLink = (key: string): boolean => {
