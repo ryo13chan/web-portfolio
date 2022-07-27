@@ -5,7 +5,7 @@ tags: ['markdown']
 thumbnail: 'programmer.png'
 ---
 
-よく使用する記法の書き方と表示のまとめ
+よく使用する記法の書き方と表示のまとめです。
 
 <br>
 
