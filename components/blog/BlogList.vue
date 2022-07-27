@@ -16,11 +16,11 @@ withDefaults(defineProps<Props>(), {
   },
 })
 
-const thumbnailImageUrl = computed(
-  () => (thumbnail: string) =>
-    new URL(`../../assets/images/${thumbnail || 'icon.jpg'}`, import.meta.url)
-      .href
-)
+// const thumbnailImageUrl = computed(
+//   () => (thumbnail: string) =>
+//     new URL(`../../assets/images/${thumbnail || 'icon.jpg'}`, import.meta.url)
+//       .href
+// )
 const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
 const blogTag = (key: string) => blogTagData.find((tag) => tag.key === key)
 </script>
@@ -33,9 +33,9 @@ const blogTag = (key: string) => blogTagData.find((tag) => tag.key === key)
         :key="article._path"
         class="flex py-3 border-bottom-1 border-300"
       >
-        <nuxt-link :to="article._path">
+        <!-- <nuxt-link :to="article._path">
           <img :src="thumbnailImageUrl(article.thumbnail)" class="thumbnail" />
-        </nuxt-link>
+        </nuxt-link> -->
         <div>
           <div class="flex align-items-center">
             <i class="pi pi-calendar mr-2"></i>
