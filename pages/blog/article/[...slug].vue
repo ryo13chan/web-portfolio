@@ -8,8 +8,10 @@ useHead({
 
 const thumbnailImageUrl = computed(
   () => (thumbnail: string) =>
-    new URL(`/_nuxt/assets/images/${thumbnail || 'icon.jpg'}`, import.meta.url)
-      .href
+    new URL(
+      `../../../assets/images/${thumbnail || 'icon.jpg'}`,
+      import.meta.url
+    ).href
 )
 const tags = (tags: string[]) =>
   tags.map((tag: string) => blogTagData.find((tagData) => tagData.key === tag))

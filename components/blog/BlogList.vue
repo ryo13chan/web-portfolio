@@ -18,7 +18,7 @@ withDefaults(defineProps<Props>(), {
 
 const thumbnailImageUrl = computed(
   () => (thumbnail: string) =>
-    new URL(`/_nuxt/assets/images/${thumbnail || 'icon.jpg'}`, import.meta.url)
+    new URL(`../../assets/images/${thumbnail || 'icon.jpg'}`, import.meta.url)
       .href
 )
 const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
