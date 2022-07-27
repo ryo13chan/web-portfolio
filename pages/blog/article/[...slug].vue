@@ -9,7 +9,7 @@ useHead({
 const thumbnailImageUrl = computed(
   () => (thumbnail: string) =>
     new URL(
-      `../../../assets/images/blog/${thumbnail || 'icon.jpg'}`,
+      `../../../assets/images/${thumbnail || 'icon.jpg'}`,
       import.meta.url
     ).href
 )
