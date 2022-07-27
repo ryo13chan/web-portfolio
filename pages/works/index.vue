@@ -4,7 +4,7 @@ import WorkCard from '~/components/works/WorkCard.vue'
 
 const title = ref('Works')
 useHead({
-  title,
+  title: title.value,
 })
 
 const webPortfolioImageUrl = computed(

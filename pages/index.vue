@@ -4,7 +4,7 @@ const router = useRouter()
 
 const title = ref('Home')
 useHead({
-  title,
+  title: title.value,
 })
 
 const toAbout = () => router.push({ path: '/about' })
@@ -41,7 +41,7 @@ const iconImageUrl = computed(
 </template>
 
 <style scoped lang="scss">
-@import 'primeflex/primeflex.scss';
+@import 'primeflex/primeflex';
 
 .home {
   @include styleclass(

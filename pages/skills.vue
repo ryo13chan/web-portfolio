@@ -7,7 +7,7 @@ import InterestPanel from '~/components/skills/InterestPanel.vue'
 
 const title = ref('Skills')
 useHead({
-  title,
+  title: title.value,
 })
 </script>
 

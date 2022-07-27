@@ -5,7 +5,7 @@ import Career from '~/components/about/Career.vue'
 
 const title = ref('About')
 useHead({
-  title,
+  title: title.value,
 })
 </script>
 

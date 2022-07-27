@@ -3,7 +3,7 @@ import ComicList from '~/components/new-comics/comicList.vue'
 
 const title = ref('新刊コミック一覧')
 useHead({
-  title,
+  title: title.value,
 })
 </script>
 
@@ -22,7 +22,7 @@ useHead({
 </template>
 
 <style scoped lang="scss">
-@import 'primeflex/primeflex.scss';
+@import 'primeflex/primeflex';
 
 ::v-deep .p-tabview-panels {
   @include styleclass('p-0');

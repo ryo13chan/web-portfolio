@@ -5,7 +5,7 @@ import MonthlyReserveAmount from '~/components/reserve-simulation/MonthlyReserve
 
 const title = ref('積立シミュレーション')
 useHead({
-  title,
+  title: title.value,
 })
 </script>
 

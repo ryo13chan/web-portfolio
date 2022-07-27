@@ -25,18 +25,30 @@ const menus = ref<menuItem[]>([
     label: 'Works',
     to: '/works',
   },
+  {
+    key: 'blog',
+    label: 'Blog',
+    to: '/blog/article',
+  },
 ])
 
 const iconImageUrl = computed(
   () => new URL('../assets/images/icon.jpg', import.meta.url).href
 )
 
+const isActiveLink = (key: string): boolean => {
+  if (key !== 'blog') return false
+  return useRoute().path.includes('/blog')
+}
+
 const visibleMenu = ref<boolean>(false)
 const show = () => (visibleMenu.value = true)
 </script>
 
 <template>
-  <header class="top-0 left-0 sticky bg-white w-full shadow-1 px-4 py-2">
+  <header
+    class="top-0 left-0 sticky bg-white w-full shadow-1 px-4 py-2 opacity-90"
+  >
     <div class="flex justify-content-between align-items-center">
       <div class="flex align-items-center">
         <Avatar
@@ -51,7 +63,11 @@ const show = () => (visibleMenu.value = true)
         <!-- PC用メニュー -->
         <ul class="hidden lg:flex list-none">
           <li v-for="menu in menus" :key="menu.key" class="menu-item px-3">
-            <nuxt-link :to="menu.to">{{ menu.label }}</nuxt-link>
+            <nuxt-link
+              :to="menu.to"
+              :class="{ 'router-link-active': isActiveLink(menu.key) }"
+              >{{ menu.label }}</nuxt-link
+            >
           </li>
         </ul>
         <!-- SP用メニューアイコン -->
@@ -74,7 +90,7 @@ const show = () => (visibleMenu.value = true)
 </template>
 
 <style scoped lang="scss">
-@import 'primeflex/primeflex.scss';
+@import 'primeflex/primeflex';
 
 header {
   z-index: 1000;

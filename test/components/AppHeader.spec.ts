@@ -1,9 +1,13 @@
 import { mount } from '@vue/test-utils'
-import { test, expect, describe } from 'vitest'
+import { test, expect, describe, vi } from 'vitest'
 import { createTestingPinia } from '@pinia/testing'
 import AppHeader from '~/components/AppHeader.vue'
 import GitLatestCommit from '~/components/GitLatestCommit.vue'
 import Avatar from 'primevue/avatar'
+
+vi.stubGlobal('useRoute', () => {
+  return { path: [] }
+})
 
 describe('ヘッダー', () => {
   const wrapper = mount(AppHeader, {
@@ -28,7 +32,7 @@ describe('ヘッダー', () => {
       expect(menuList.exists()).toBe(true)
     })
     test('メニュー数が正しいこと', () => {
-      expect(menuList.findAll('li').length).toBe(4)
+      expect(menuList.findAll('li').length).toBe(5)
     })
 
     describe('Home', () => {
@@ -72,6 +76,17 @@ describe('ヘッダー', () => {
       })
       test('Works画面に遷移すること', () => {
         expect(works?.find('nuxt-link').attributes().to).toBe('/works')
+      })
+    })
+
+    describe('Blog', () => {
+      const works = menuList.findAll('li').at(4)
+
+      test('表示されること', () => {
+        expect(works?.text()).toBe('Blog')
+      })
+      test('Blog画面に遷移すること', () => {
+        expect(works?.find('nuxt-link').attributes().to).toBe('/blog/article')
       })
     })
   })

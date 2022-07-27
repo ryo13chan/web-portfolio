@@ -16,6 +16,7 @@ import TabPanel from 'primevue/tabpanel'
 import Sidebar from 'primevue/sidebar'
 import Tooltip from 'primevue/tooltip'
 import Chart from 'primevue/chart'
+import Image from 'primevue/image'
 import Avatar from 'primevue/avatar'
 import Chip from 'primevue/chip'
 import ScrollTop from 'primevue/scrolltop'
@@ -45,6 +46,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive('tooltip', Tooltip)
   // CHART
   nuxtApp.vueApp.component('Chart', Chart)
+  // MEDIA
+  nuxtApp.vueApp.component('Image', Image)
   // MISC
   nuxtApp.vueApp.component('Avatar', Avatar)
   nuxtApp.vueApp.component('Chip', Chip)

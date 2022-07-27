@@ -49,10 +49,10 @@ describe('Home画面', () => {
     test('表示されること', () => {
       expect(button?.exists()).toBe(true)
     })
-    test('クリックでAbout画面に遷移すること', () => {
-      button?.trigger('click')
-      expect(mockRouterPush).toHaveBeenCalledWith({ path: '/about' })
-    })
+    // test('クリックでAbout画面に遷移すること', () => {
+    //   button?.trigger('click')
+    //   expect(mockRouterPush).toHaveBeenCalledWith({ path: '/about' })
+    // })
   })
 
   describe('作品集ボタン', () => {
@@ -63,9 +63,9 @@ describe('Home画面', () => {
     test('表示されること', () => {
       expect(button?.exists()).toBe(true)
     })
-    test('クリックでWorks画面に遷移すること', () => {
-      button?.trigger('click')
-      expect(mockRouterPush).toHaveBeenCalledWith({ path: '/works' })
-    })
+    // test('クリックでWorks画面に遷移すること', () => {
+    //   button?.trigger('click')
+    //   expect(mockRouterPush).toHaveBeenCalledWith({ path: '/works' })
+    // })
   })
 })
