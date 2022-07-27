@@ -16,10 +16,13 @@ withDefaults(defineProps<Props>(), {
   },
 })
 
-const thumbnailImageUrl = computed(() => (thumbnail: string) => {
-  const fileName = thumbnail || 'icon.jpg'
-  return new URL(`../../assets/images/blog/${fileName}`, import.meta.url).href
-})
+const thumbnailImageUrl = computed(
+  () => (thumbnail: string) =>
+    new URL(
+      `../../assets/images/blog/${thumbnail || 'icon.jpg'}`,
+      import.meta.url
+    ).href
+)
 const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
 const blogTag = (key: string) => blogTagData.find((tag) => tag.key === key)
 </script>

@@ -6,11 +6,13 @@ useHead({
   title: title.value,
 })
 
-const thumbnailImageUrl = computed(() => (thumbnail: string) => {
-  const fileName = thumbnail || 'icon.jpg'
-  return new URL(`../../../assets/images/blog/${fileName}`, import.meta.url)
-    .href
-})
+const thumbnailImageUrl = computed(
+  () => (thumbnail: string) =>
+    new URL(
+      `../../../assets/images/blog/${thumbnail || 'icon.jpg'}`,
+      import.meta.url
+    ).href
+)
 const tags = (tags: string[]) =>
   tags.map((tag: string) => blogTagData.find((tagData) => tagData.key === tag))
 
