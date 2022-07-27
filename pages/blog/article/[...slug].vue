@@ -6,13 +6,13 @@ useHead({
   title: title.value,
 })
 
-// const thumbnailImageUrl = computed(
-//   () => (thumbnail: string) =>
-//     new URL(
-//       `../../../assets/images/${thumbnail || 'icon.jpg'}`,
-//       import.meta.url
-//     ).href
-// )
+const thumbnailImageUrl = computed(
+  () => (thumbnail: string) =>
+    new URL(
+      `../../../assets/images/${thumbnail || 'icon.jpg'}`,
+      import.meta.url
+    ).href
+)
 const tags = (tags: string[]) =>
   tags.map((tag: string) => blogTagData.find((tagData) => tagData.key === tag))
 
@@ -34,11 +34,11 @@ const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
             <BlogTag v-for="tag in tags(doc.tags)" :key="tag?.key" :tag="tag" />
           </div>
         </div>
-        <!-- <img
+        <img
           v-if="doc.thumbnail"
           :src="thumbnailImageUrl(doc.thumbnail)"
           class="thumbnail"
-        /> -->
+        />
         <ContentRenderer :value="doc" />
       </template>
       <template #empty />
