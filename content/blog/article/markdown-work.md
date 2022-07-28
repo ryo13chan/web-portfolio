@@ -3,6 +3,16 @@ title: Markdown記法サンプル
 createdAt: 2022-07-24
 tags: ['markdown']
 thumbnail: 'programmer.png'
+head:
+  meta:
+    - property: 'og:title'
+      content: 'Markdown記法サンプル'
+    - property: 'og:url'
+      content: 'https://ryo-portfolio.netlify.app/blog/article/markdown-work'
+    - property: 'og:image'
+      content: '/assets/images/programmer.png'
+    - property: 'og:description'
+      content: 'よく使用する記法の書き方と表示のまとめです。'
 ---
 
 よく使用する記法の書き方と表示のまとめです。
