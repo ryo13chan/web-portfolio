@@ -133,6 +133,38 @@ const newComicsSkills = ref<Skill[]>([
     noIcon: true,
   },
 ])
+
+const blogImageUrl = computed(
+  () => new URL('../../assets/images/blog.png', import.meta.url).href
+)
+const blogSkills = ref<Skill[]>([
+  {
+    key: 'nuxtjs',
+    label: 'Nuxt3',
+  },
+  {
+    key: 'nuxtjs',
+    label: 'Nuxt Content',
+  },
+  {
+    key: 'vuejs',
+    label: 'Vue Composition API',
+  },
+  {
+    key: 'typescript',
+    label: 'TypeScript',
+  },
+  {
+    key: 'primevue',
+    label: 'PrimeVUE',
+    noIcon: true,
+  },
+  {
+    key: 'primeflex',
+    label: 'PrimeFlex',
+    noIcon: true,
+  },
+])
 </script>
 
 <template>
@@ -187,6 +219,18 @@ const newComicsSkills = ref<Skill[]>([
           <template #content>
             <div>近日発売予定のコミックを確認できます。</div>
             <div>楽天の新刊コミックAPIを使用しています。</div>
+          </template>
+        </WorkCard>
+      </div>
+      <div class="col-12 lg:col-6">
+        <WorkCard
+          :image="blogImageUrl"
+          title="Blog"
+          to="/blog/article"
+          :skills="blogSkills"
+        >
+          <template #content>
+            <div>ブログ機能です。不定期で更新します。</div>
           </template>
         </WorkCard>
       </div>

@@ -66,4 +66,15 @@ describe('Works画面', () => {
       expect(newComicsCard?.vm.to).toBe('/works/new-comics/')
     })
   })
+
+  describe('Blog', () => {
+    const blogCard = wrapper.findAllComponents(WorkCard).at(4)
+
+    test('表示されること', () => {
+      expect(blogCard?.vm.title).toBe('Blog')
+    })
+    test('Blog画面に遷移すること', () => {
+      expect(blogCard?.vm.to).toBe('/blog/article')
+    })
+  })
 })
