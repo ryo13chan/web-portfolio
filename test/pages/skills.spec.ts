@@ -34,7 +34,7 @@ describe('Skills画面', () => {
     const frontendPanel = wrapper.findComponent(FrontendPanel)
 
     test('表示されること', () => {
-      expect(frontendPanel.exists()).toBe(true)
+      expect(frontendPanel.exists()).toBeTruthy()
     })
   })
 
@@ -42,7 +42,7 @@ describe('Skills画面', () => {
     const backendPanel = wrapper.findComponent(BackendPanel)
 
     test('表示されること', () => {
-      expect(backendPanel.exists()).toBe(true)
+      expect(backendPanel.exists()).toBeTruthy()
     })
   })
 
@@ -50,7 +50,7 @@ describe('Skills画面', () => {
     const dbInfraPanel = wrapper.findComponent(DBInfraPanel)
 
     test('表示されること', () => {
-      expect(dbInfraPanel.exists()).toBe(true)
+      expect(dbInfraPanel.exists()).toBeTruthy()
     })
   })
 
@@ -58,7 +58,7 @@ describe('Skills画面', () => {
     const toolPanel = wrapper.findComponent(ToolPanel)
 
     test('表示されること', () => {
-      expect(toolPanel.exists()).toBe(true)
+      expect(toolPanel.exists()).toBeTruthy()
     })
   })
 
@@ -66,7 +66,7 @@ describe('Skills画面', () => {
     const interestPanel = wrapper.findComponent(InterestPanel)
 
     test('表示されること', () => {
-      expect(interestPanel.exists()).toBe(true)
+      expect(interestPanel.exists()).toBeTruthy()
     })
   })
 })

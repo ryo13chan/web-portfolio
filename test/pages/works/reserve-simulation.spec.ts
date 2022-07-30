@@ -49,7 +49,7 @@ describe('新刊コミック一覧画面', () => {
         const finalReserveAmount =
           finalReserveAmountTabPanel?.findComponent(FinalReserveAmount)
 
-        expect(finalReserveAmount?.exists()).toBe(true)
+        expect(finalReserveAmount?.exists()).toBeTruthy()
       })
     })
 
@@ -63,7 +63,7 @@ describe('新刊コミック一覧画面', () => {
         const accumulationPeriod =
           accumulationPeriodTabPanel?.findComponent(AccumulationPeriod)
 
-        expect(accumulationPeriod?.exists()).toBe(true)
+        expect(accumulationPeriod?.exists()).toBeTruthy()
       })
     })
 
@@ -79,7 +79,7 @@ describe('新刊コミック一覧画面', () => {
         const monthlyReserveAmount =
           monthlyReserveAmountTabPanel?.findComponent(MonthlyReserveAmount)
 
-        expect(monthlyReserveAmount?.exists()).toBe(true)
+        expect(monthlyReserveAmount?.exists()).toBeTruthy()
       })
     })
   })

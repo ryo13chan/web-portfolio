@@ -32,12 +32,12 @@ describe('Home画面', () => {
     const icon = wrapper.findComponent(Avatar)
 
     test('表示されること', () => {
-      expect(icon.exists()).toBe(true)
+      expect(icon.exists()).toBeTruthy()
     })
     test('アイコン画像が指定されていること', () => {
       expect(
         icon.find('img').attributes().src.endsWith('/assets/images/icon.jpg')
-      ).toBe(true)
+      ).toBeTruthy()
     })
   })
 
@@ -47,7 +47,7 @@ describe('Home画面', () => {
       .find((c) => c.text() === '自己紹介')
 
     test('表示されること', () => {
-      expect(button?.exists()).toBe(true)
+      expect(button?.exists()).toBeTruthy()
     })
     // test('クリックでAbout画面に遷移すること', () => {
     //   button?.trigger('click')
@@ -61,7 +61,7 @@ describe('Home画面', () => {
       .find((c) => c.text() === '作品集')
 
     test('表示されること', () => {
-      expect(button?.exists()).toBe(true)
+      expect(button?.exists()).toBeTruthy()
     })
     // test('クリックでWorks画面に遷移すること', () => {
     //   button?.trigger('click')

@@ -39,7 +39,7 @@ describe('新刊コミック一覧画面', () => {
       test('一覧が表示されること', () => {
         const prevComicList = prevComicTabPanel?.findComponent(ComicList)
 
-        expect(prevComicList?.exists()).toBe(true)
+        expect(prevComicList?.exists()).toBeTruthy()
       })
     })
 
@@ -52,7 +52,7 @@ describe('新刊コミック一覧画面', () => {
       test('一覧が表示されること', () => {
         const newComicList = newComicTabPanel?.findComponent(ComicList)
 
-        expect(newComicList?.exists()).toBe(true)
+        expect(newComicList?.exists()).toBeTruthy()
       })
     })
   })

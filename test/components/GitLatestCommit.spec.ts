@@ -54,7 +54,7 @@ describe('Git最新コミット', () => {
       test('表示されないこと', () => {
         const newLabel = wrapper.findComponent(Tag)
 
-        expect(newLabel.exists()).toBe(false)
+        expect(newLabel.exists()).toBeFalsy()
       })
     })
 
@@ -94,7 +94,7 @@ describe('Git最新コミット', () => {
         const newLabel = wrapper.findComponent(Tag)
 
         expect(newLabel.text()).toBe('New')
-        expect(newLabel.exists()).toBe(true)
+        expect(newLabel.exists()).toBeTruthy()
       })
     })
   })

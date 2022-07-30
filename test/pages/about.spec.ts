@@ -26,7 +26,7 @@ describe('About画面', () => {
     const selfIntroduction = wrapper.findComponent(SelfIntroduction)
 
     test('表示されること', () => {
-      expect(selfIntroduction.exists()).toBe(true)
+      expect(selfIntroduction.exists()).toBeTruthy()
     })
   })
 
@@ -34,7 +34,7 @@ describe('About画面', () => {
     const timeline = wrapper.findComponent(Timeline)
 
     test('表示されること', () => {
-      expect(timeline.exists()).toBe(true)
+      expect(timeline.exists()).toBeTruthy()
     })
   })
 
@@ -42,7 +42,7 @@ describe('About画面', () => {
     const career = wrapper.findComponent(Career)
 
     test('表示されること', () => {
-      expect(career.exists()).toBe(true)
+      expect(career.exists()).toBeTruthy()
     })
   })
 })

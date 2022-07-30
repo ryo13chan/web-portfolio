@@ -21,7 +21,7 @@ describe('ヘッダー', () => {
     const gitLatestCommit = wrapper.findComponent(GitLatestCommit)
 
     test('表示されること', () => {
-      expect(gitLatestCommit.exists()).toBe(true)
+      expect(gitLatestCommit.exists()).toBeTruthy()
     })
   })
 
@@ -29,7 +29,7 @@ describe('ヘッダー', () => {
     const menuList = wrapper.find('ul')
 
     test('表示されること', () => {
-      expect(menuList.exists()).toBe(true)
+      expect(menuList.exists()).toBeTruthy()
     })
     test('メニュー数が正しいこと', () => {
       expect(menuList.findAll('li').length).toBe(5)
