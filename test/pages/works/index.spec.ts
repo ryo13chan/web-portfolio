@@ -20,6 +20,13 @@ describe('Works画面', () => {
     })
   })
 
+  describe('Works', () => {
+    const workCards = wrapper.findAllComponents(WorkCard)
+    test('workの数が正しいこと', () => {
+      expect(workCards.length).toBe(6)
+    })
+  })
+
   describe('Web Portfolio', () => {
     const webPortfolioCard = wrapper.findAllComponents(WorkCard).at(0)
 
@@ -75,6 +82,18 @@ describe('Works画面', () => {
     })
     test('Blog画面に遷移すること', () => {
       expect(blogCard?.vm.to).toBe('/blog/article')
+    })
+  })
+
+  describe('Yes or No', () => {
+    const yesOrNoCard = wrapper.findAllComponents(WorkCard).at(5)
+
+    test('表示されること', () => {
+      expect(yesOrNoCard?.vm.title).toBe('Yes or No')
+    })
+    test('外部リンクで開くこと', () => {
+      expect(yesOrNoCard?.vm.href).toBe('https://yes-or-no-66adf.web.app/')
+      expect(yesOrNoCard?.vm.target).toBe('_blank')
     })
   })
 })

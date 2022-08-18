@@ -165,6 +165,40 @@ const blogSkills = ref<Skill[]>([
     noIcon: true,
   },
 ])
+
+const yesOrNoImageUrl = computed(
+  () => new URL('../../assets/images/yes-or-no.png', import.meta.url).href
+)
+const yesOrNoSkills = ref<Skill[]>([
+  {
+    key: 'react',
+    label: 'React18',
+  },
+  {
+    key: 'react',
+    label: 'React Hooks',
+  },
+  {
+    key: 'typescript',
+    label: 'TypeScript',
+  },
+  {
+    key: 'chakraui',
+    label: 'Chakra UI',
+  },
+  {
+    key: 'firestore',
+    label: 'Firestore Database',
+    iconUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+  },
+  {
+    key: 'hosting',
+    label: 'Hosting',
+    iconUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+  },
+])
 </script>
 
 <template>
@@ -231,6 +265,31 @@ const blogSkills = ref<Skill[]>([
         >
           <template #content>
             <div>ブログ機能です。不定期で更新します。</div>
+          </template>
+        </WorkCard>
+      </div>
+      <div class="col-12 lg:col-6">
+        <WorkCard
+          :image="yesOrNoImageUrl"
+          title="Yes or No"
+          href="https://yes-or-no-66adf.web.app/"
+          target="_blank"
+          :skills="yesOrNoSkills"
+        >
+          <template #content>
+            <nuxt-link href="https://yesno.wtf/#api" target="_blank"
+              >yesno.wtf</nuxt-link
+            >
+            <span
+              >を使用し<span class="font-bold">Yes</span>か<span
+                class="font-bold"
+                >No</span
+              >を表示します。</span
+            >
+            <span
+              >1/10000で<span class="font-bold">Maybe</span
+              >が表示されるらしいです。</span
+            >
           </template>
         </WorkCard>
       </div>
