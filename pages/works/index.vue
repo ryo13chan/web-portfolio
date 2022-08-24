@@ -185,6 +185,7 @@ const yesOrNoSkills = ref<Skill[]>([
   {
     key: 'chakraui',
     label: 'Chakra UI',
+    noIcon: true,
   },
   {
     key: 'firestore',
