@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { Skill } from '~/components/Skillchip.vue'
-type Props = {
+import { Skill } from '~/components/SkillChip.vue'
+
+defineProps<{
   image: string
   title: string
   href?: string
@@ -8,8 +9,7 @@ type Props = {
   target?: string
   skills: Skill[]
   description?: string
-}
-defineProps<Props>()
+}>()
 </script>
 
 <template>
@@ -38,7 +38,7 @@ defineProps<Props>()
 </template>
 
 <style scoped lang="scss">
-@import 'primeflex/primeflex.scss';
+@import 'primeflex/primeflex';
 
 .title {
   &:hover {
