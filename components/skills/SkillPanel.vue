@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { Skill } from '~/components/SkillChip.vue'
-type Props = {
-  title: string
-  skills: Skill[]
-}
-withDefaults(defineProps<Props>(), {
-  title: '',
-  skills: () => [],
-})
+withDefaults(
+  defineProps<{
+    title: string
+    skills: Skill[]
+  }>(),
+  {
+    title: '',
+    skills: () => [],
+  }
+)
 </script>
 
 <template>
@@ -19,7 +21,15 @@ withDefaults(defineProps<Props>(), {
 </template>
 
 <style scoped lang="scss">
-@import 'primeflex/primeflex.scss';
+@import 'primeflex/primeflex';
+
+::v-deep .p-panel-header {
+  @include styleclass('border-round-top-2xl');
+}
+
+::v-deep .p-panel-content {
+  @include styleclass('border-round-bottom-2xl');
+}
 
 .panel-body {
   @include styleclass('flex flex-wrap');

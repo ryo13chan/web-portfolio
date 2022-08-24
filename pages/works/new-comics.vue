@@ -24,6 +24,14 @@ useHead({
 <style scoped lang="scss">
 @import 'primeflex/primeflex';
 
+::v-deep .p-tabview-nav-content {
+  @include styleclass('border-round-top-2xl');
+}
+
+::v-deep .p-card {
+  @include styleclass('border-round-bottom-2xl');
+}
+
 ::v-deep .p-tabview-panels {
   @include styleclass('p-0');
 }

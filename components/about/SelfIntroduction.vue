@@ -33,5 +33,6 @@ pre {
   line-height: 1.5rem;
   white-space: pre-wrap;
   background: #282c34;
+  border-radius: 15px;
 }
 </style>

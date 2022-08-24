@@ -13,7 +13,7 @@ defineProps<{
 </script>
 
 <template>
-  <Card>
+  <Card class="border-round-2xl">
     <template #header>
       <nuxt-link :href="href" :to="to" :target="target">
         <img v-lazy="image" class="p-2" />

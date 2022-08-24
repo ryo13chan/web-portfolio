@@ -24,7 +24,7 @@ const close = () => {
 </script>
 
 <template>
-  <Card>
+  <Card class="border-round-2xl">
     <template #content>
       <div class="flex align-items-center justify-content-between mb-3">
         <h3 class="my-0">経歴</h3>

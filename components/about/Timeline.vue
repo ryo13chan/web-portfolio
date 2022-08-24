@@ -57,16 +57,18 @@ const events = ref<event[]>([
 </script>
 
 <template>
-  <Card>
+  <Card class="border-round-2xl">
     <template #content>
       <Timeline :value="events" align="alternate">
         <template #opposite="{ item }">
           <small class="p-text-secondary">{{ item.date }}</small>
         </template>
         <template #content="{ item }">
-          <Card class="mb-4 border-solid border-200">
+          <Card
+            class="mb-4 border-solid border-200 border-round-2xl surface-50"
+          >
             <template #subtitle>
-              <span class="font-bold">{{ item.title }}</span>
+              <span class="font-bold text-xl">{{ item.title }}</span>
             </template>
             <template #content>
               <div
@@ -83,3 +85,9 @@ const events = ref<event[]>([
     </template>
   </Card>
 </template>
+
+<style scoped lang="scss">
+.p-card {
+  /* border-radius: 15px; */
+}
+</style>
