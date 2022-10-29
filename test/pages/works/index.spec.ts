@@ -23,7 +23,7 @@ describe('Works画面', () => {
   describe('Works', () => {
     const workCards = wrapper.findAllComponents(WorkCard)
     test('workの数が正しいこと', () => {
-      expect(workCards.length).toBe(6)
+      expect(workCards.length).toBe(7)
     })
   })
 
@@ -38,8 +38,22 @@ describe('Works画面', () => {
     })
   })
 
+  describe('Ryo Dashboard', () => {
+    const ryoDashboardCard = wrapper.findAllComponents(WorkCard).at(1)
+
+    test('表示されること', () => {
+      expect(ryoDashboardCard?.vm.title).toBe('Ryo Dashboard')
+    })
+    test('外部リンクで開くこと', () => {
+      expect(ryoDashboardCard?.vm.href).toBe(
+        'https://ryo-dashboard.vercel.app/'
+      )
+      expect(ryoDashboardCard?.vm.target).toBe('_blank')
+    })
+  })
+
   describe('Mobile Portfolio', () => {
-    const mobilePortfolioCard = wrapper.findAllComponents(WorkCard).at(1)
+    const mobilePortfolioCard = wrapper.findAllComponents(WorkCard).at(2)
 
     test('表示されること', () => {
       expect(mobilePortfolioCard?.vm.title).toBe('Mobile Portfolio')
@@ -53,7 +67,7 @@ describe('Works画面', () => {
   })
 
   describe('積立シミュレーション', () => {
-    const reserveSimulationCard = wrapper.findAllComponents(WorkCard).at(2)
+    const reserveSimulationCard = wrapper.findAllComponents(WorkCard).at(3)
 
     test('表示されること', () => {
       expect(reserveSimulationCard?.vm.title).toBe('積立シミュレーション')
@@ -64,7 +78,7 @@ describe('Works画面', () => {
   })
 
   describe('新刊コミック一覧', () => {
-    const newComicsCard = wrapper.findAllComponents(WorkCard).at(3)
+    const newComicsCard = wrapper.findAllComponents(WorkCard).at(4)
 
     test('表示されること', () => {
       expect(newComicsCard?.vm.title).toBe('新刊コミック一覧')
@@ -75,7 +89,7 @@ describe('Works画面', () => {
   })
 
   describe('Blog', () => {
-    const blogCard = wrapper.findAllComponents(WorkCard).at(4)
+    const blogCard = wrapper.findAllComponents(WorkCard).at(5)
 
     test('表示されること', () => {
       expect(blogCard?.vm.title).toBe('Blog')
@@ -86,7 +100,7 @@ describe('Works画面', () => {
   })
 
   describe('Yes or No', () => {
-    const yesOrNoCard = wrapper.findAllComponents(WorkCard).at(5)
+    const yesOrNoCard = wrapper.findAllComponents(WorkCard).at(6)
 
     test('表示されること', () => {
       expect(yesOrNoCard?.vm.title).toBe('Yes or No')

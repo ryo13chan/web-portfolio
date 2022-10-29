@@ -50,6 +50,34 @@ const webPortfolioSkills = ref<Skill[]>([
   },
 ])
 
+const ryoDashboardImageUrl = computed(
+  () => new URL('../../assets/images/ryo-dashboard.png', import.meta.url).href
+)
+const ryoDashboardSkills = ref<Skill[]>([
+  {
+    key: 'react',
+    label: 'React',
+  },
+  {
+    key: 'nextjs',
+    label: 'Next.js',
+  },
+  {
+    key: 'typescript',
+    label: 'TypeScript',
+  },
+  {
+    key: 'chakraui',
+    label: 'Chakra UI',
+    noIcon: true,
+  },
+  {
+    key: 'vercel',
+    label: 'Vercel',
+    noIcon: true,
+  },
+])
+
 const mobilePortfolioImageUrl = computed(
   () =>
     new URL('../../assets/images/mobile-portfolio.png', import.meta.url).href
@@ -172,11 +200,7 @@ const yesOrNoImageUrl = computed(
 const yesOrNoSkills = ref<Skill[]>([
   {
     key: 'react',
-    label: 'React18',
-  },
-  {
-    key: 'react',
-    label: 'React Hooks',
+    label: 'React',
   },
   {
     key: 'typescript',
@@ -213,6 +237,16 @@ const yesOrNoSkills = ref<Skill[]>([
           to="/"
           :skills="webPortfolioSkills"
           description="当サイトです。"
+        />
+      </div>
+      <div class="col-12 lg:col-6">
+        <WorkCard
+          :image="ryoDashboardImageUrl"
+          title="Ryo Dashboard"
+          href="https://ryo-dashboard.vercel.app/"
+          target="_blank"
+          :skills="ryoDashboardSkills"
+          description="個人用のダッシュボードです。"
         />
       </div>
       <div class="col-12 lg:col-6">
