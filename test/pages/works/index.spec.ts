@@ -23,7 +23,7 @@ describe('Works画面', () => {
   describe('Works', () => {
     const workCards = wrapper.findAllComponents(WorkCard)
     test('workの数が正しいこと', () => {
-      expect(workCards.length).toBe(7)
+      expect(workCards.length).toBe(8)
     })
   })
 
@@ -108,6 +108,22 @@ describe('Works画面', () => {
     test('外部リンクで開くこと', () => {
       expect(yesOrNoCard?.vm.href).toBe('https://yes-or-no-66adf.web.app/')
       expect(yesOrNoCard?.vm.target).toBe('_blank')
+    })
+  })
+
+  describe('Twitter 高度な検索メーカー', () => {
+    const twitterAdvancedSearchMaker = wrapper.findAllComponents(WorkCard).at(7)
+
+    test('表示されること', () => {
+      expect(twitterAdvancedSearchMaker?.vm.title).toBe(
+        'Twitter 高度な検索メーカー'
+      )
+    })
+    test('外部リンクで開くこと', () => {
+      expect(twitterAdvancedSearchMaker?.vm.href).toBe(
+        'https://twitter-advanced-search-maker.vercel.app'
+      )
+      expect(twitterAdvancedSearchMaker?.vm.target).toBe('_blank')
     })
   })
 })

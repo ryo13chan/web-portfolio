@@ -224,6 +224,34 @@ const yesOrNoSkills = ref<Skill[]>([
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
   },
 ])
+
+const twitterAdvancedSearchMakerImageUrl = computed(
+  () =>
+    new URL(
+      '../../assets/images/twitter-advanced-search-maker.png',
+      import.meta.url
+    ).href
+)
+const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
+  {
+    key: 'react',
+    label: 'React',
+  },
+  {
+    key: 'typescript',
+    label: 'TypeScript',
+  },
+  {
+    key: 'chakraui',
+    label: 'Chakra UI',
+    noIcon: true,
+  },
+  {
+    key: 'netlify',
+    label: 'Netlify',
+    noIcon: true,
+  },
+])
 </script>
 
 <template>
@@ -326,6 +354,19 @@ const yesOrNoSkills = ref<Skill[]>([
               >が表示されるらしいです。</span
             >
           </template>
+        </WorkCard>
+      </div>
+      <div class="col-12 lg:col-6">
+        <WorkCard
+          :image="twitterAdvancedSearchMakerImageUrl"
+          title="Twitter 高度な検索メーカー"
+          href="https://twitter-advanced-search-maker.vercel.app"
+          target="_blank"
+          :skills="twitterAdvancedSearchMakerSkills"
+        >
+          <template #content
+            >Twitterのコマンドによる検索を支援するフォームです。</template
+          >
         </WorkCard>
       </div>
     </div>
